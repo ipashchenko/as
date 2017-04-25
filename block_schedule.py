@@ -39,14 +39,17 @@ def classify_block(block):
     if block[0].startswith('Comments: Lavochkin shortened start time on'):
         shortened_time_mins = block[0].strip().split()[-2]
         rank = 1
-    if block[0].startswith('Comments: Lavochkin shortened stop time on'):
+    elif block[0].startswith('Comments: Lavochkin shortened stop time on'):
         shortened_time_mins = block[0].strip().split()[-2]
         rank = 1
     elif block[0].startswith('Observational code:'):
         rank = 0
-    elif block[0].startswith('###Cancelled: poor GRT support'):
+    elif block[0].startswith('###Cancelled: poor'):
         rank = 0
     elif block[0].startswith('###Cancelled by Lavochkin'):
         rank = 1
+    else:
+        print block
+        raise Exception("Check unknown block starting")
     return rank
 
