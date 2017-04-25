@@ -1,5 +1,6 @@
 import re
 import datetime
+import json
 
 
 def parse_block_schedule_into_blocks(fname):
@@ -90,5 +91,30 @@ def parse_racat(fname):
             except IndexError:
                 pass
 
+    return source_coordinates
+
+
+def dump_source_coordinates(fname, outfname):
+    """
+    Dump source coordinates to json format.
+    
+    :param fname: 
+        Path to RA catalouge.
+    :param outfname:
+        Path to dump file.
+    """
+    source_coordinates = parse_racat(fname)
+    with open(outfname, 'w') as fo:
+        json.dump(source_coordinates, fo)
+
+
+def load_source_coordinates(fname):
+    """
+    Load source coordinates dictionary from json-file.
+    :return: 
+        Dictionary with keys - source names and values - lists of RA & DEC.
+    """
+    with open(fname, 'r') as fo:
+        source_coordinates = json.load(fo)
     return source_coordinates
 
