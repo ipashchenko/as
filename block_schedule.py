@@ -118,3 +118,7 @@ def load_source_coordinates(fname):
         source_coordinates = json.load(fo)
     return source_coordinates
 
+
+def datetime_to_fractional_year(dt):
+    return  (float(dt.strftime("%j"))-1) / 366
+
