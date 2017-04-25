@@ -1,3 +1,6 @@
+import datetime
+
+
 def parse_block_schedule_into_blocks(fname):
     """
     Parse block_schedule into blocks of lines.
@@ -52,4 +55,15 @@ def classify_block(block):
         print block
         raise Exception("Check unknown block starting")
     return rank
+
+
+def get_ut_source_from_block(block):
+    for line in block:
+        if 'Start(UT)' in line:
+            ut_time = "{} {}".format(line.strip().split()[1],
+                                     line.strip().split()[2])
+            ut_datetime = datetime.strptime(ut_time, '%d.%m.%Y %H:%M:%S')
+        if 'Source:' in line:
+            source = line.strip().split()[-1]
+    return ut_datetime, source
 
