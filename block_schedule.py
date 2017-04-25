@@ -1,3 +1,4 @@
+import re
 import datetime
 
 
@@ -66,4 +67,28 @@ def get_ut_source_from_block(block):
         if 'Source:' in line:
             source = line.strip().split()[-1]
     return ut_datetime, source
+
+
+def parse_racat(fname):
+    """
+    :return: 
+        Dictionary with keys - source names and values - tuples of RA & DEC.
+    """
+
+    source_coordinates = dict()
+
+    with open(fname, 'r') as fo:
+        lines = fo.readlines()
+        for line in lines:
+            if line.strip().startswith('!'):
+                continue
+            try:
+                name = re.findall(r".+source='(\S+)'", line)[0]
+                ra = re.findall(r".+RA=(\S+) ", line)[0]
+                dec = re.findall(r".+DEC=(\S+) ", line)[0]
+                source_coordinates.update({str(name): (ra, dec)})
+            except IndexError:
+                pass
+
+    return source_coordinates
 
