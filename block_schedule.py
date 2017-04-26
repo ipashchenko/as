@@ -307,3 +307,16 @@ if __name__ == '__main__':
     plt.legend()
     plt.show()
 
+    frac_year = fr[fr['rank'] == 1]['frac_year']
+    frac_year_ = fr[fr['rank'] == 0]['frac_year']
+    plt.figure()
+    plt.subplot(111)
+    plt.hist(frac_year, bins=20, color='r', alpha=0.3, label='bad',
+             range=[0, 1])
+    plt.hist(frac_year_, bins=20, color='g', alpha=0.3, label='good',
+             range=[0, 1])
+    plt.xlabel(r'Fraction of the year')
+    plt.ylabel('N')
+    plt.legend()
+    plt.show()
+
