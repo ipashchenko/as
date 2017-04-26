@@ -284,3 +284,26 @@ if __name__ == '__main__':
     fr = create_features_responces_dataset(block_sched_files,
                                            'RA_cat_v054.pkl')
 
+    # From astropy docs
+    ras = fr[fr['rank'] == 1]['ra']
+    decs = fr[fr['rank'] == 1]['dec']
+    ras_rad = [ra.wrap_at(180 * u.deg).radian for ra in ras]
+    decs_rad = [dec.radian for dec in decs]
+
+    ras_ = fr[fr['rank'] == 0]['ra']
+    decs_ = fr[fr['rank'] == 0]['dec']
+    ras_rad_ = [ra.wrap_at(180 * u.deg).radian for ra in ras_]
+    decs_rad_ = [dec.radian for dec in decs_]
+
+    import matplotlib.pyplot as plt
+    plt.figure(figsize=(8, 4.2))
+    plt.subplot(111, projection="aitoff")
+    plt.grid(True)
+    plt.plot(ras_rad, decs_rad, 'o', markersize=2, alpha=0.2, color='r',
+             label='bad')
+    plt.plot(ras_rad_, decs_rad_, 'o', markersize=2, alpha=0.2, color='g',
+             label='good')
+    plt.subplots_adjust(top=0.95, bottom=0.0)
+    plt.legend()
+    plt.show()
+
