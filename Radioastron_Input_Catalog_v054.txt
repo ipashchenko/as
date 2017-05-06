@@ -1,0 +1,539 @@
+!-----------------------------------
+!  Radioastron Input Catalog v053  !
+!-----------------------------------
+!
+! If you would like to change something in this catalog
+! please contact Alexander Pushkarev <contour@mail.ru>
+!
+! ----****#### FAKE source ####****----
+   source='HOME'  RA=00:00:00.00  DEC=+88:00:00.0  equinox='J2000' rem='fake source representing RadioAstron home position for tests' /
+! RA-AO4-01
+   source='ORIONH2O', 'ORION_H2O'  RA=05:35:14.1255  DEC=-05:22:36.475  equinox='J2000' rem='H2O maser; position from 2011ApJ739L..59H, RA-AO4-01, RA-AO2-08' /
+   source='W49N_H2O'   RA=19:10:13.426   DEC=+09:06:12.38   equinox='J2000' rem='H2O maser; positions from 2000ApJS...129Argon, RA-AO4-01, RA-AO2-13' /
+   source='CPHW2H2O', 'CEP_HW2_H2O', 'CEPHEUS_A_HW2_H2O'  RA=22:56:17.9779  DEC=62:01:49.4421  equinox='J2000' rem='H2O maser; positions from 2003ApJ586...306Gallimore, RA-AO4-01, RA-AO2-08' /
+! RA-AO4-02
+   source='B0740-28', 'J0742-2822' RA=07:42:49.058   DEC=-28:22:43.76   equinox='J2000' rem='RA-AO4-02' /
+   source='B0818-13', 'J0820-1350' RA=08:20:26.382   DEC=-13:50:55.859  equinox='J2000' rem='RA-AO4-02' /
+   source='B0823+26', 'J0826+2637' RA=08:26:51.3833  DEC=+26:37:23.790  equinox='J2000' rem='PSR Low dispersed DM=19.454, RA-AO4-02, RA-AO2-06' /
+   source='B0835-41', 'J0837-4135' RA=08:37:21.182   DEC=-41:35:14.370  equinox='J2000' rem='RA-AO4-02' /
+   source='B1240-64', 'J1243-6423' RA=12:43:17.158   DEC=-64:23:23.850  equinox='J2000' rem='RA-AO4-02' /
+   source='B1323-58', 'J1326-5859' RA=13:26:58.270   DEC=-58:59:29.100  equinox='J2000' rem='RA-AO4-02' /
+   source='B1323-62', 'J1327-6222' RA=13:27:17.400   DEC=-62:22:44.600  equinox='J2000' rem='RA-AO4-02' /
+   source='B1426-66', 'J1430-6623' RA=14:30:40.872   DEC=-66:23:05.040  equinox='J2000' rem='RA-AO4-02' /
+   source='B1429-64'               RA=14:53:32.737   DEC=-64:13:15.590  equinox='J2000' rem='RA-AO4-02' /
+   source='B1642-03', 'J1645-0317' RA=16:45:02.0414  DEC=-03:17:58.320  equinox='J2000' rem='PSR High dispersed DM=35.727, RA-AO4-02, RA-AO2-01, RA-AO2-06' /
+   source='B1727-47', 'J1731-4744' RA=17:31:42.103   DEC=-47:44:34.560  equinox='J2000' rem='RA-AO4-02' /
+   source='B1831-03', 'J1833-0338' RA=18:33:41.914   DEC=-03:39:04.33   equinox='J2000' rem='RA-AO4-02' /
+   source='B1839+56', 'J1840+5640' RA=18:40:44.608   DEC=+56:40:55.47   equinox='J2000' rem='RA-AO4-02' /
+   source='B1859+03', 'J1901+0331' RA=19:01:31.781   DEC=+03:31:05.92   equinox='J2000' rem='PSR DM=402.080, position from 2004MNRAS.353.1311H, RA-AO4-02, RA-AO2-01' /
+   source='B1911-04', 'J1913-0440' RA=19:13:54.173   DEC=-04:40:47.68   equinox='J2000' rem='RA-AO4-02' /
+   source='B1937+21', 'J1939+2134' RA=19:39:38.550   DEC=+21:34:59.100  equinox='J2000' rem='PSR GP,High dispersed DM=71.0398, RA-AO4-02' /
+   source='B2016+28', 'J2018+2839' RA=20:18:03.8333  DEC=+28:39:54.212  equinox='J2000' rem='PSR Low dispersed DM=14.172, RA-AO4-02, RA-AO2-06' /
+   source='B2021+51', 'J2022+5154' RA=20:22:49.873   DEC=+51:54:50.233  equinox='J2000' rem='PSR High dispersed DM=22.648, RA-AO4-02' /
+   source='B2255+58', 'J2257+5909' RA=22:57:57.744   DEC=+59:09:14.83   equinox='J2000' rem='RA-AO4-02' /
+   source='B2319+60', 'J2321+6024' RA=23:21:55.213   DEC=+60:24:30.71   equinox='J2000' rem='RA-AO4-02' /
+   source='0106+013', 'J0108+0135' RA=01:08:38.771107 DEC=+01:35:00.31717 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 46104 observations, RA-AO3-04, RA-AO2-12' /
+! RA-AO4-03
+   source='0201+113', 'J0203+1134' RA=02:03:46.657061 DEC=+11:34:45.40942 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 18135 observations, RA-AO4-03, RA-AO3-04, RA-AO2-03, RA-AO2-12' /
+   source='1713+218', 'J1715+2145' RA=17:15:21.257012 DEC=+21:45:31.70121 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 50 observations, RA-AO4-03, RA-AO2-03' /
+   source='1937-101', 'J1939-1002' RA=19:39:57.256582 DEC=-10:02:41.52079 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, RA-AO4-03' /
+   source='2000-330', 'J2003-3251' RA=20:03:24.116342 DEC=-32:51:45.13295 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, RA-AO4-03' /
+   source='2215+020', 'J2217+0220' RA=22:17:48.237927 DEC=+02:20:10.71214 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 383 observations, RA-AO4-03, RA-AO3-04, RA-AO3-03, RA-AO2-03, RA-AO2-12' /
+! RA-AO4-04
+   source='0316+413', 'J0319+4130', '3C84' RA=03:19:48.160114 DEC=+41:30:42.10559 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 15448 observations, RA-AO4-04, RA-AO3-04, RA-AO2-12' /
+! RA-AO4-05
+   source='M33-IC13',  'M33-IC133'   RA=01:33:16.545   DEC=30:52:50.0     equinox='J2000' rem='RA-AO4-05' /
+   source='LMC-N113',   'N113_H2O'   RA=05:13:25.15    DEC=-69:22:45.4    equinox='J2000' rem='H2O maser; positions from 2010MNRAS404..779Ellingsen, RA-AO4-05, RA-AO3-10, RA-AO2-13'/
+   source='NGC3079', 'NGC3079_H2O'   RA=10:01:57.802   DEC=55:40:47.26    equinox='J2000' rem='H2O maser; positions from 2005ApJ...618K, RA-AO4-05, RA-AO3-10, RA-AO2-13' /
+   source='NGC4258', 'NGC4258_H2O'   RA=12:18:57.5046  DEC=47:18:14.303   equinox='J2000' rem='H2O maser; positions from Herrnstein et al. 2005, RA-AO4-05, RA-AO3-10, RA-AO2-13' /
+   source='NGC4945'                  RA=13:05:27.484   DEC=-49:28:05.37   equinox='J2000' rem='H2O extragal maser; position from the RA proposal, RA-AO4-05, RA-AO3-10' /
+   source='CIRCINUS', 'CIRCINUS_H2O' RA=14:13:09.95    DEC=-65:20:21.2    equinox='J2000' rem='H2O maser; positions from ApJ2003590...162Greenhill, RA-AO4-05, RA-AO3-10, RA-AO2-13'/
+! RA-AO4-06
+   source='0851+202', 'J0854+2006', 'OJ287' RA=08:54:48.874930 DEC=+20:06:30.64078 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 213710 observations, RA-AO4-06, RA-AO3-04, RA-AO3-05, RA-AO2-12' /
+   source='2251+158', 'J2253+1608', '3C454.3' RA=22:53:57.747940 DEC=+16:08:53.56074 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 40570 observations, RA-AO4-06, RA-AO3-04, RA-AO2-12' /
+   source='2230+114', 'J2232+1143', 'CTA102' RA=22:32:36.408905 DEC=+11:43:50.90395 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 5100 observations, RA-AO4-06, RA-AO3-04, RA-AO2-12' /
+! RA-AO4-07
+   source='0048-097', 'J0050-0929' RA=00:50:41.317387 DEC=-09:29:05.21037 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 46175 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0234+285', 'J0237+2848' RA=02:37:52.405678 DEC=+28:48:08.98999 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 57147 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0235+164', 'J0238+1636' RA=02:38:38.930107 DEC=+16:36:59.27452 equinox='J2000' rem='AGN, IDV, rfc_2013d Petrov, 2013, unpublished 65224 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0430+052', 'J0433+0521', '3C120' RA=04:33:11.095533 DEC=+05:21:15.61916 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 9633 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0454-234', 'J0457-2324' RA=04:57:03.179228 DEC=-23:24:52.02024 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 69420 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0529+483', 'J0533+4822' RA=05:33:15.865793 DEC=+48:22:52.80771 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 19801 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0607-157', 'J0609-1542' RA=06:09:40.949536 DEC=-15:42:40.67271 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 40739 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0648-165', 'J0650-1637' RA=06:50:24.581861 DEC=-16:37:39.72548 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 10699 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0716+714', 'J0721+7120' RA=07:21:53.448474 DEC=+71:20:36.36340 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 42370 observations, RA-AO4-07, RA-AO3-04, RA-AO2-10, RA-AO2-12' /
+   source='0727-115', 'J0730-1141' RA=07:30:19.112473 DEC=-11:41:12.60063 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 155894 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0814+425', 'J0818+4222' RA=08:18:15.999600 DEC=+42:22:45.41481 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 3620 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0823+033', 'J0825+0309' RA=08:25:50.338355 DEC=+03:09:24.51995 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 57025 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='0827+243', 'J0830+2410' RA=08:30:52.086193 DEC=+24:10:59.82026 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 3847 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+!   source='0851+202', 'J0854+2006', 'OJ287' RA=08:54:48.874930 DEC=+20:06:30.64078 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 213710 observations, RA-AO4-07, RA-AO3-04, RA-AO3-05, RA-AO2-12' /
+   source='0954+658', 'J0958+6533' RA=09:58:47.245116 DEC=+65:33:54.81801 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 13350 observations, fringe-finder for M81 RA-AO4-07, RA-AO3-04, RA-AO3-07, RA-AO2-12' /
+   source='1005+066', 'J1008+0621' RA=10:08:00.816157 DEC=+06:21:21.21593 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 317 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='1040+244', 'J1043+2408' RA=10:43:09.035778 DEC=+24:08:35.40933 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 7417 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='1044+719', 'J1048+7143' RA=10:48:27.619927 DEC=+71:43:35.93838 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 141793 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='1101+384', 'J1104+3812', 'MRK421' RA=11:04:27.313945 DEC=+38:12:31.79894 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 17168 observations, RA-AO4-07, RA-AO3-04, RA-AO3-09, RA-AO2-12' /
+   source='1222+216', 'J1224+2122' RA=12:24:54.458394 DEC=+21:22:46.38857 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 406 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='1226+023', 'J1229+0203', '3C273B', '3C273' RA=12:29:06.699731 DEC=+02:03:08.59797 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 32011 observations, RA-AO4-07, RA-AO3-04, RA-AO3-05, RA-AO2-12,  RA-AO2-18' /
+   source='1253-055', 'J1256-0547', '3C279' RA=12:56:11.166557 DEC=-05:47:21.52489 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 7924 observations, RA-AO4-07, RA-AO3-04, RA-AO3-05, RA-AO2-12,  RA-AO2-18' /
+   source='1357+769', 'J1357+7643' RA=13:57:55.371538 DEC=+76:43:21.05098 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 226762 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+   source='1641+399', 'J1642+3948', '3C345' RA=16:42:58.809963 DEC=+39:48:36.99385 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 51938 observations, RA-AO4-07, RA-AO3-04, RA-AO3-05, RA-AO2-10, RA-AO2-12' /
+   source='1642+690', 'J1642+6856' RA=16:42:07.848507 DEC=+68:56:39.75636 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 18956 observations, RA-AO4-07, RA-AO3-04, RA-AO2-11, RA-AO2-12' /
+   source='2200+420', 'J2202+4216', 'BLLAC' RA=22:02:43.291371 DEC=+42:16:39.97987 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 59417 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+!   source='2230+114', 'J2232+1143', 'CTA102' RA=22:32:36.408905 DEC=+11:43:50.90395 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 5100 observations, RA-AO4-07, RA-AO3-04, RA-AO2-12' /
+! RA-AO4-08
+   source='0615+820', 'J0626+8202'         RA=06:26:03.006221 DEC=+82:02:25.56790 equinox='J2000' rem='AGN, rfc_2013d Petrov, 201d, RA-AO4-09' /
+! RA-AO4-09
+   source='0238-084', 'J0241-0815', 'NGC1052'  RA=02:41:04.798502 DEC=-08:15:20.75192 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, RA-AO4-09' /
+! RA-AO4-11 not supported proposal
+   source='NML_CYG', 'NML_CYG_H2O'         RA=20:46:25.543   DEC=40:06:59.42    equinox='J2000' rem='OH maser; positions from 2008PASJ60...1069NAGAYAMA, RA-AO4-11, RA-AO2-13' /
+   source='VX_SGR_H2O'                     RA=18:08:04.04831 DEC=-22:13:26.6327 equinox='J2000' rem='H2O maser; positions from Simbad, RA-AO4-11, RA-AO2-13'/
+   source='PZ_CAS'                         RA=23:44:03.28104 DEC=+61:47:22.1823 equinox='J2000' rem='RA-AO4-11' /
+   source='IRAS1510', 'IRAS15103-5754_H2O' RA=15:14:18.400   DEC=-58:05:21.0    equinox='J2000' rem='H2O WF maser; positions from Simbad, RA-AO4-11, RA-AO2-13'/
+   source='IRAS1811', 'IRAS18113-2503_H2O' RA=18:14:26.740   DEC=-25:02:54.80   equinox='J2000' rem='H2O WF maser; positions from 2011ApJL739..L14Gomez, RA-AO4-11, RA-AO2-13'/
+   source='IRAS1828', 'IRAS18286-0959_H2O' RA=18:31:22.934   DEC=-09:57:21.70   equinox='J2000' rem='H2O WF maser; positions from 2013PASJ65..28Imai, RA-AO4-11' /
+   source='W43A_H2O'                       RA=18:47:41.166   DEC=-01:45:11.7    equinox='J2000' rem='H2O WF maser; positions from 2006ApJ648..L59Vlemmings, RA-AO4-11, RA-AO2-13'/
+! RA-AO4-12
+!   source='B0823+26', 'J0826+2637' RA=08:26:51.383300 DEC=+26:37:23.79000 equinox='J2000' rem='PSR Low dispersed DM=19.454, RA-AO4-12, RA-AO2-06' /
+!   source='0827+243', 'J0830+2410' RA=08:30:52.086193 DEC=+24:10:59.82026 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 3847 observations, RA-AO4-12, RA-AO3-04, RA-AO2-12' /
+!   source='B1839+56'               RA=18:40:44.608    DEC=+56:40:55.47    equinox='J2000' rem='RA-AO4-12' /
+!   source='1823+568', 'J1824+5651' RA=18:24:07.068371 DEC=+56:51:01.49076 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 8126 observations, RA-AO4-12, RA-AO3-04, RA-AO2-12' /
+!   source='B2021+51', 'J2022+5154' RA=20:22:49.873000 DEC=+51:54:50.23300 equinox='J2000' rem='PSR High dispersed DM=22.648, RA-AO4-12' /
+!   source='2037+511', 'J2038+5119', '3C418' RA=20:38:37.034732 DEC=+51:19:12.66253 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 108656 observations, RA-AO4-12, RA-AO3-04, RA-AO2-12' /
+!   source='2022+542', 'J2023+5427' RA=20:23:55.844020 DEC=+54:27:35.82889 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 140 observations, RA-AO4-12, RA-AO3-04, RA-AO2-12' /
+   source='B2154+40'               RA=21:57:01.8495   DEC=+40:17:45.986   equinox='J2000' rem='RA-AO4-12' /
+!   source='2200+420', 'J2202+4216', 'BLLAC' RA=22:02:43.291371 DEC=+42:16:39.97987 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 59417 observations, RA-AO4-12, RA-AO3-04, RA-AO2-12' /
+!
+!endcat /
+! ----****#### AGN for the survey added in AO3 ####****----
+   source='0007+106', 'J0010+1058' RA=00:10:31.005907 DEC=+10:58:29.50423 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 3268 observations, RA-AO3-04' /
+   source='0110+318', 'J0112+3208' RA=01:12:50.333038 DEC=+32:08:17.43261 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 72 observations, RA-AO3-04' /
+   source='0219+428', 'J0222+4302' RA=02:22:39.611495 DEC=+43:02:07.79884 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1093 observations, RA-AO3-04' /
+   source='0224+671', 'J0228+6721' RA=02:28:50.051490 DEC=+67:21:03.02933 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 3946 observations, RA-AO3-04' /
+   source='0529+075', 'J0532+0732' RA=05:32:38.998458 DEC=+07:32:43.34492 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 107 observations, RA-AO3-04' /
+   source='0730+504', 'J0733+5022' RA=07:33:52.520582 DEC=+50:22:09.06206 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 574 observations, RA-AO3-04' /
+   source='0829+046', 'J0831+0429' RA=08:31:48.876958 DEC=+04:29:39.08580 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1604 observations, RA-AO3-04' /
+   source='0838+133', 'J0840+1312' RA=08:40:47.588427 DEC=+13:12:23.56368 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 196 observations, RA-AO3-04' /
+   source='1127-145', 'J1130-1449' RA=11:30:07.052575 DEC=-14:49:27.38834 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1399 observations, RA-AO3-04' /
+   source='1219+285', 'J1221+2813' RA=12:21:31.690520 DEC=+28:13:58.50011 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 880 observations, RA-AO3-04' /
+   source='1302-102', 'J1305-1033' RA=13:05:33.015041 DEC=-10:33:19.42817 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1014 observations, RA-AO3-04' /
+   source='1329-049', 'J1332-0509' RA=13:32:04.464672 DEC=-05:09:43.30568 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 64 observations, RA-AO3-04' /
+   source='1417+385', 'J1419+3821' RA=14:19:46.613761 DEC=+38:21:48.47497 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 21334 observations, RA-AO3-04' /
+   source='1538+149', 'J1540+1447' RA=15:40:49.491516 DEC=+14:47:45.88462 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1559 observations, RA-AO3-04' /
+   source='1622-297', 'J1626-2951' RA=16:26:06.020841 DEC=-29:51:26.97133 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1393 observations, RA-AO3-04' /
+   source='1726+455', 'J1727+4530' RA=17:27:27.650803 DEC=+45:30:39.73121 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 62139 observations, RA-AO3-04' /
+   source='1923+210', 'J1925+2106' RA=19:25:59.605355 DEC=+21:06:26.16191 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 35453 observations, RA-AO3-04' /
+   source='2005+403', 'J2007+4029' RA=20:07:44.944844 DEC=+40:29:48.60406 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 169 observations, RA-AO3-04' /
+   source='2131-021', 'J2134-0153' RA=21:34:10.309596 DEC=-01:53:17.23889 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2033 observations, RA-AO3-04' /
+! ----****#### Original KSP AGN survey sample ####****----
+   source='0003-066', 'J0006-0623' RA=00:06:13.892888 DEC=-06:23:35.33541 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 33141 observations, RA-AO3-04, RA-AO2-12' /
+   source='0016+731', 'J0019+7327' RA=00:19:45.786355 DEC=+73:27:30.01760 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 63799 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0048-097', 'J0050-0929' RA=00:50:41.317387 DEC=-09:29:05.21037 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 46175 observations, RA-AO3-04, RA-AO2-12' /
+   source='0059+581', 'J0102+5824' RA=01:02:45.762378 DEC=+58:24:11.13660 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 319479 observations, RA-AO3-04, RA-AO2-11, RA-AO2-12' /
+!   source='0106+013', 'J0108+0135' RA=01:08:38.771107 DEC=+01:35:00.31717 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 46104 observations, RA-AO3-04, RA-AO2-12' /
+   source='0106+612', 'J0109+6133' RA=01:09:46.344314 DEC=+61:33:30.45573 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 321 observations, RA-AO3-04, RA-AO2-12' /
+   source='0119+115', 'J0121+1149' RA=01:21:41.595043 DEC=+11:49:50.41305 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 47881 observations, RA-AO3-04, RA-AO2-12' /
+   source='0122-003', 'J0125-0005' RA=01:25:28.843826 DEC=-00:05:55.93215 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 101 observations, RA-AO3-04, RA-AO2-12' /
+   source='0133+476', 'J0136+4751' RA=01:36:58.594805 DEC=+47:51:29.10004 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 178454 observations, RA-AO3-04, RA-AO2-12' /
+   source='0149+218', 'J0152+2207' RA=01:52:18.059044 DEC=+22:07:07.69974 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2624 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0201+113', 'J0203+1134' RA=02:03:46.657061 DEC=+11:34:45.40942 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 18135 observations, RA-AO3-04, RA-AO2-03, RA-AO2-12' /
+   source='0202+149', 'J0204+1514' RA=02:04:50.413896 DEC=+15:14:11.04358 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 37010 observations, RA-AO3-04, RA-AO2-12' /
+   source='0202+319', 'J0205+3212' RA=02:05:04.925361 DEC=+32:12:30.09541 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 4207 observations, RA-AO3-04, RA-AO2-12' /
+   source='0208-512', 'J0210-5101' RA=02:10:46.200426 DEC=-51:01:01.89180 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 6995 observations, RA-AO3-04, RA-AO2-12' /
+   source='0215+015', 'J0217+0144' RA=02:17:48.954755 DEC=+01:44:49.69903 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 14210 observations, RA-AO3-04, RA-AO2-12' /
+   source='0212+735', 'J0217+7349' RA=02:17:30.813373 DEC=+73:49:32.62180 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 48731 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0234+285', 'J0237+2848' RA=02:37:52.405678 DEC=+28:48:08.98999 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 57147 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0235+164', 'J0238+1636' RA=02:38:38.930107 DEC=+16:36:59.27452 equinox='J2000' rem='AGN, IDV, rfc_2013d Petrov, 2013, unpublished 65224 observations, RA-AO3-04, RA-AO2-12' /
+   source='0300+470', 'J0303+4716' RA=03:03:35.242224 DEC=+47:16:16.27546 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 26473 observations, RA-AO3-04, RA-AO2-12' /
+   source='0307+380', 'J0310+3814' RA=03:10:49.879926 DEC=+38:14:53.83785 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 9270 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0316+413', 'J0319+4130', '3C84' RA=03:19:48.160114 DEC=+41:30:42.10559 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 15448 observations, RA-AO3-04, RA-AO2-12' /
+   source='0322+222', 'J0325+2224' RA=03:25:36.814357 DEC=+22:24:00.36553 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 12934 observations, RA-AO3-04, RA-AO2-12' /
+   source='0333+321', 'J0336+3218', 'NRAO140' RA=03:36:30.107611 DEC=+32:18:29.34220 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 3693 observations, RA-AO3-04, RA-AO2-12' /
+   source='0336-019', 'J0339-0146', 'CTA26' RA=03:39:30.937788 DEC=-01:46:35.80419 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 81923 observations, RA-AO3-04, RA-AO2-12' /
+   source='0340+362', 'J0343+3622' RA=03:43:28.952413 DEC=+36:22:12.42969 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 1281 observations, RA-AO3-04, RA-AO2-12' /
+   source='0346-279', 'J0348-2749' RA=03:48:38.144579 DEC=-27:49:13.56570 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1482 observations, RA-AO3-04, RA-AO2-12' /
+   source='0356+322', 'J0359+3220' RA=03:59:44.912919 DEC=+32:20:47.15555 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 88 observations, RA-AO3-04, RA-AO2-12' /
+   source='0355+508', 'J0359+5057', 'NRAO150' RA=03:59:29.747271 DEC=+50:57:50.16179 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 19270 observations, RA-AO3-04, RA-AO2-12' /
+   source='0403-132', 'J0405-1308' RA=04:05:34.003395 DEC=-13:08:13.69083 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1366 observations, RA-AO3-04, RA-AO2-12' /
+   source='0405-385', 'J0406-3826' RA=04:06:59.035337 DEC=-38:26:28.04239 equinox='J2000' rem='AGN, IDV, rfc_2013d Petrov, 2013, unpublished 3182 observations, RA-AO3-04, RA-AO2-12' /
+   source='0406+121', 'J0409+1217' RA=04:09:22.008713 DEC=+12:17:39.84767 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 1297 observations, RA-AO3-04, RA-AO2-12' /
+   source='0415+379', 'J0418+3801', '3C111' RA=04:18:21.277237 DEC=+38:01:35.80020 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 200 observations, RA-AO3-04, RA-AO2-12' /
+   source='0420+022', 'J0422+0219' RA=04:22:52.214653 DEC=+02:19:26.93072 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 4720 observations, RA-AO3-04, RA-AO2-12' /
+   source='0420-014', 'J0423-0120' RA=04:23:15.800727 DEC=-01:20:33.06557 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 44901 observations, RA-AO3-04, RA-AO2-12' /
+   source='0422+004', 'J0424+0036' RA=04:24:46.842063 DEC=+00:36:06.32936 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2320 observations, RA-AO3-04, RA-AO2-12' /
+   source='0426-380', 'J0428-3756' RA=04:28:40.424280 DEC=-37:56:19.58056 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 465 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0430+052', 'J0433+0521', '3C120' RA=04:33:11.095533 DEC=+05:21:15.61916 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 9633 observations, RA-AO3-04, RA-AO2-12' /
+   source='0446+112', 'J0449+1121' RA=04:49:07.671104 DEC=+11:21:28.59635 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 10808 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0451-282', 'J0453-2807' RA=04:53:14.646791 DEC=-28:07:37.32655 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1096 observations, RA-AO3-04, RA-AO2-12' /
+   source='0454-463', 'J0455-4615' RA=04:55:50.772517 DEC=-46:15:58.67994 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 81 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0454-234', 'J0457-2324' RA=04:57:03.179228 DEC=-23:24:52.02024 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 69420 observations, RA-AO3-04, RA-AO2-12' /
+   source='0458-020', 'J0501-0159' RA=05:01:12.809884 DEC=-01:59:14.25635 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 55142 observations, RA-AO3-04, RA-AO2-12' /
+   source='0459+135', 'J0502+1338' RA=05:02:33.219517 DEC=+13:38:10.95887 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 364 observations, RA-AO3-04, RA-AO2-12' /
+   source='0506-612', 'J0506-6109' RA=05:06:43.988735 DEC=-61:09:40.99380 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 496 observations, RA-AO3-04, RA-AO2-12' /
+   source='0506+056', 'J0509+0541' RA=05:09:25.964476 DEC=+05:41:35.33359 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 207 observations, RA-AO3-04, RA-AO2-12' /
+   source='0507+179', 'J0510+1800' RA=05:10:02.369131 DEC=+18:00:41.58163 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 1679 observations, RA-AO3-04, RA-AO2-12' /
+   source='0516-621', 'J0516-6207' RA=05:16:44.926175 DEC=-62:07:05.38922 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 455 observations, RA-AO3-04, RA-AO2-12' /
+   source='0521-365', 'J0522-3627' RA=05:22:57.984646 DEC=-36:27:30.85115 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 967 observations, RA-AO3-04, RA-AO2-12' /
+   source='0528+134', 'J0530+1331' RA=05:30:56.416749 DEC=+13:31:55.14945 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 139206 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0529+483', 'J0533+4822' RA=05:33:15.865793 DEC=+48:22:52.80771 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 19801 observations, RA-AO3-04, RA-AO2-12' /
+   source='0537-441', 'J0538-4405' RA=05:38:50.361557 DEC=-44:05:08.93893 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 36927 observations, RA-AO3-04, RA-AO2-12' /
+   source='0536+145', 'J0539+1433' RA=05:39:42.365993 DEC=+14:33:45.56168 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 3608 observations, RA-AO3-04, RA-AO2-12' /
+   source='0552+398', 'J0555+3948' RA=05:55:30.805616 DEC=+39:48:49.16494 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 392026 observations, RA-AO3-04, RA-AO2-12' /
+   source='0602+405', 'J0605+4030' RA=06:05:50.855373 DEC=+40:30:08.10354 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 326 observations, RA-AO3-04, RA-AO2-12' /
+   source='0605-085', 'J0607-0834' RA=06:07:59.699233 DEC=-08:34:49.97823 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1357 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0607-157', 'J0609-1542' RA=06:09:40.949536 DEC=-15:42:40.67271 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 40739 observations, RA-AO3-04, RA-AO2-12' /
+   source='0604+728', 'J0610+7248' RA=06:10:48.873417 DEC=+72:48:53.18435 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 168 observations, RA-AO3-04, RA-AO2-03, RA-AO2-12' /
+   source='0637-752', 'J0635-7516' RA=06:35:46.507907 DEC=-75:16:16.81532 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 6254 observations, RA-AO3-04, RA-AO2-12' /
+   source='0633+734', 'J0639+7324' RA=06:39:21.961221 DEC=+73:24:58.04034 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 126 observations, RA-AO3-04, RA-AO2-12' /
+   source='0642+449', 'J0646+4451' RA=06:46:32.026000 DEC=+44:51:16.59010 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 129725 observations, RA-AO3-04, RA-AO2-03, RA-AO2-12' /
+   source='0646-306', 'J0648-3044' RA=06:48:14.096458 DEC=-30:44:19.65976 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 899 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0648-165', 'J0650-1637' RA=06:50:24.581861 DEC=-16:37:39.72548 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 10699 observations, RA-AO3-04, RA-AO2-12' /
+   source='0657+172', 'J0700+1709' RA=07:00:01.525541 DEC=+17:09:21.70122 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 14255 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0716+714', 'J0721+7120' RA=07:21:53.448474 DEC=+71:20:36.36340 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 42370 observations, RA-AO3-04, RA-AO2-10, RA-AO2-12' /
+   source='0722+145', 'J0725+1425' RA=07:25:16.807764 DEC=+14:25:13.74657 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 2417 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0727-115', 'J0730-1141' RA=07:30:19.112473 DEC=-11:41:12.60063 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 155894 observations, RA-AO3-04, RA-AO2-12' /
+   source='0736+017', 'J0739+0137' RA=07:39:18.033897 DEC=+01:37:04.61773 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 2716 observations, RA-AO3-04, RA-AO2-12' /
+   source='0738+313', 'J0741+3112' RA=07:41:10.703310 DEC=+31:12:00.22895 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2756 observations, RA-AO3-04, RA-AO3-09, RA-AO2-12' /
+   source='0743-006', 'J0745-0044' RA=07:45:54.082322 DEC=-00:44:17.54000 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1678 observations, RA-AO3-04, RA-AO2-12' /
+   source='0748+126', 'J0750+1231' RA=07:50:52.045731 DEC=+12:31:04.82815 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 26051 observations, RA-AO3-04, RA-AO2-12' /
+   source='0749+540', 'J0753+5352' RA=07:53:01.384573 DEC=+53:52:59.63704 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 77635 observations, RA-AO3-04, RA-AO2-12' /
+   source='0754+100', 'J0757+0956' RA=07:57:06.642950 DEC=+09:56:34.85224 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 2217 observations, RA-AO3-04, RA-AO2-12' /
+   source='0804+499', 'J0808+4950' RA=08:08:39.666289 DEC=+49:50:36.53037 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 95391 observations, RA-AO3-04, RA-AO2-12' /
+   source='0805-077', 'J0808-0751' RA=08:08:15.536034 DEC=-07:51:09.88656 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 730 observations, RA-AO3-04, RA-AO2-12' /
+   source='0808+019', 'J0811+0146' RA=08:11:26.707316 DEC=+01:46:52.22014 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 11691 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0814+425', 'J0818+4222' RA=08:18:15.999600 DEC=+42:22:45.41481 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 3620 observations, RA-AO3-04, RA-AO2-12' /
+   source='0821+394', 'J0824+3916' RA=08:24:55.483856 DEC=+39:16:41.90401 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1462 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0823+033', 'J0825+0309' RA=08:25:50.338355 DEC=+03:09:24.51995 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 57025 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0827+243', 'J0830+2410' RA=08:30:52.086193 DEC=+24:10:59.82026 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 3847 observations, RA-AO3-04, RA-AO2-12' /
+   source='0834-201', 'J0836-2016' RA=08:36:39.215241 DEC=-20:16:59.50414 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1853 observations, RA-AO3-04, RA-AO2-12' /
+   source='0836+710', 'J0841+7053' RA=08:41:24.365284 DEC=+70:53:42.17302 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 4321 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0851+202', 'J0854+2006', 'OJ287' RA=08:54:48.874930 DEC=+20:06:30.64078 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 213710 observations, RA-AO3-04, RA-AO3-05, RA-AO2-12' /
+   source='0906+015', 'J0909+0121' RA=09:09:10.091598 DEC=+01:21:35.61771 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 560 observations, RA-AO3-04, RA-AO2-12' /
+   source='0906+430', 'J0909+4253' RA=09:09:33.497149 DEC=+42:53:46.48205 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 90 observations, RA-AO3-04, RA-AO2-12' /
+   source='0917+449', 'J0920+4441' RA=09:20:58.458485 DEC=+44:41:53.98501 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2520 observations, RA-AO3-04, RA-AO2-12' /
+   source='0917+624', 'J0921+6215' RA=09:21:36.231074 DEC=+62:15:52.18031 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 7902 observations, RA-AO3-04, RA-AO2-12' /
+   source='0919-260', 'J0921-2618' RA=09:21:29.353855 DEC=-26:18:43.38632 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 12110 observations, RA-AO3-04, RA-AO2-12' /
+   source='0923+392', 'J0927+3902', '4C39.25' RA=09:27:03.013939 DEC=+39:02:20.85177 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 245863 observations, RA-AO3-04, RA-AO3-05, RA-AO2-12' /
+   source='0925+504', 'J0929+5013' RA=09:29:15.440209 DEC=+50:13:35.98961 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 223 observations, RA-AO3-04, RA-AO2-12' /
+   source='0945+408', 'J0948+4039' RA=09:48:55.338151 DEC=+40:39:44.58693 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2097 observations, RA-AO3-04, RA-AO3-09, RA-AO2-12' /
+   source='0953+254', 'J0956+2515', 'OK290' RA=09:56:49.875379 DEC=+25:15:16.04978 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 29017 observations, RA-AO3-04, RA-AO2-12' /
+   source='0955+476', 'J0958+4725' RA=09:58:19.671645 DEC=+47:25:07.84237 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 171543 observations, RA-AO3-04, RA-AO2-12' /
+!   source='0954+658', 'J0958+6533' RA=09:58:47.245116 DEC=+65:33:54.81801 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 13350 observations, fringe-finder for M81 RA-AO3-04, RA-AO3-07, RA-AO2-12' /
+!   source='1005+066', 'J1008+0621' RA=10:08:00.816157 DEC=+06:21:21.21593 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 317 observations, RA-AO3-04, RA-AO2-12' /
+   source='1015+057', 'J1018+0530' RA=10:18:27.848284 DEC=+05:30:29.96198 equinox='J2000' rem='AGN, BAL QSO, rfc_2013d Petrov, 2013, unpublished 2506 observations, RA-AO3-04, RA-AO2-12' /
+   source='1015+359', 'J1018+3542' RA=10:18:10.988103 DEC=+35:42:39.44084 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 3031 observations, RA-AO3-04, RA-AO2-12' /
+   source='1023+131', 'J1025+1253' RA=10:25:56.285371 DEC=+12:53:49.02188 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1414 observations, RA-AO3-04, RA-AO2-12' /
+   source='1034-293', 'J1037-2934' RA=10:37:16.079738 DEC=-29:34:02.81349 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 29794 observations, RA-AO3-04, RA-AO2-12' /
+   source='1036+054', 'J1038+0512' RA=10:38:46.779881 DEC=+05:12:29.08645 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 315 observations, RA-AO3-04, RA-AO2-12' /
+   source='1038+064', 'J1041+0610' RA=10:41:17.162502 DEC=+06:10:16.92354 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1746 observations, RA-AO3-04, RA-AO2-12' /
+!   source='1040+244', 'J1043+2408' RA=10:43:09.035778 DEC=+24:08:35.40933 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 7417 observations, RA-AO3-04, RA-AO2-12' /
+!   source='1044+719', 'J1048+7143' RA=10:48:27.619927 DEC=+71:43:35.93838 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 141793 observations, RA-AO3-04, RA-AO2-12' /
+   source='1045-188', 'J1048-1909' RA=10:48:06.620604 DEC=-19:09:35.72683 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2578 observations, RA-AO3-04, RA-AO2-12' /
+   source='1055+018', 'J1058+0133' RA=10:58:29.605207 DEC=+01:33:58.82359 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 8183 observations, RA-AO3-04, RA-AO2-12' /
+   source='1057-797', 'J1058-8003' RA=10:58:43.309745 DEC=-80:03:54.15977 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 18025 observations, RA-AO3-04, RA-AO2-12' /
+!   source='1101+384', 'J1104+3812', 'MRK421' RA=11:04:27.313945 DEC=+38:12:31.79894 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 17168 observations, RA-AO3-04, RA-AO3-09, RA-AO2-12' /
+   source='1123+264', 'J1125+2610' RA=11:25:53.711924 DEC=+26:10:19.97856 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 3323 observations, RA-AO3-04, RA-AO2-12' /
+   source='1124-186', 'J1127-1857' RA=11:27:04.392449 DEC=-18:57:17.44185 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 41937 observations, RA-AO3-04, RA-AO2-12' /
+   source='1128+385', 'J1130+3815' RA=11:30:53.282615 DEC=+38:15:18.54689 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 82839 observations, RA-AO3-04, RA-AO2-12' /
+   source='1144+402', 'J1146+3958' RA=11:46:58.297917 DEC=+39:58:34.30433 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 18887 observations, RA-AO3-04, RA-AO2-12' /
+   source='1144-379', 'J1147-3812' RA=11:47:01.370702 DEC=-38:12:11.02355 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 21454 observations, RA-AO3-04, RA-AO2-12' /
+   source='1149-084', 'J1152-0841' RA=11:52:17.209511 DEC=-08:41:03.31399 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 6645 observations, RA-AO3-04, RA-AO2-12' /
+   source='1150+497', 'J1153+4931' RA=11:53:24.466639 DEC=+49:31:08.83012 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1816 observations, RA-AO3-04, RA-AO2-12' /
+   source='1150+812', 'J1153+8058' RA=11:53:12.499225 DEC=+80:58:29.15457 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 7032 observations, RA-AO3-04, RA-AO2-12' /
+   source='1156+295', 'J1159+2914' RA=11:59:31.833913 DEC=+29:14:43.82678 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 70591 observations, RA-AO3-04, RA-AO2-12' /
+   source='1206-202', 'J1209-2032' RA=12:09:14.610990 DEC=-20:32:38.99053 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 132 observations, RA-AO3-04, RA-AO2-12' /
+   source='1213-172', 'J1215-1731' RA=12:15:46.751763 DEC=-17:31:45.40317 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2101 observations, RA-AO3-04, RA-AO2-12' /
+   source='1219+044', 'J1222+0413' RA=12:22:22.549622 DEC=+04:13:15.77600 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 34610 observations, RA-AO3-04, RA-AO2-12' /
+!   source='1222+216', 'J1224+2122' RA=12:24:54.458394 DEC=+21:22:46.38857 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 406 observations, RA-AO3-04, RA-AO2-12' /
+!   source='1226+023', 'J1229+0203', '3C273B', '3C273' RA=12:29:06.699731 DEC=+02:03:08.59797 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 32011 observations, RA-AO3-04, RA-AO3-05, RA-AO2-12,  RA-AO2-18' /
+   source='1228+126', 'J1230+1223', '3C274', 'M87', 'VIR-A' RA=12:30:49.423382 DEC=+12:23:28.04365 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 55201 observations, RA-AO3-04, RA-AO3-05, RA-AO2-12' /
+   source='1239+376', 'J1242+3720' RA=12:42:09.812390 DEC=+37:20:05.69271 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 387 observations, RA-AO3-04, RA-AO2-03, RA-AO2-12' /
+   source='1244-255', 'J1246-2547' RA=12:46:46.802036 DEC=-25:47:49.28903 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 3435 observations, RA-AO3-04, RA-AO2-12' /
+!   source='1253-055', 'J1256-0547', '3C279' RA=12:56:11.166557 DEC=-05:47:21.52489 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 7924 observations, RA-AO3-04, RA-AO3-05, RA-AO2-12,  RA-AO2-18' /
+   source='1256-220', 'J1258-2219' RA=12:58:54.478780 DEC=-22:19:31.12561 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 413 observations, RA-AO3-04, RA-AO2-12' /
+   source='1257-326', 'J1300-3253' RA=13:00:42.426016 DEC=-32:53:12.11382 equinox='J2000' rem='AGN, IDV, rfc_2013d Petrov, 2013, unpublished 204 observations, RA-AO3-04, RA-AO2-12' /
+   source='1308+326', 'J1310+3220' RA=13:10:28.663852 DEC=+32:20:43.78277 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 118974 observations, RA-AO3-04, RA-AO2-12' /
+   source='1313-333', 'J1316-3338' RA=13:16:07.985937 DEC=-33:38:59.17269 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 5759 observations, RA-AO3-04, RA-AO2-12' /
+   source='1319-093', 'J1322-0937' RA=13:22:36.912643 DEC=-09:37:37.79977 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 64 observations, RA-AO3-04, RA-AO2-12' /
+   source='1322-427', 'J1325-4301', 'CEN-A' RA=13:25:27.615212 DEC=-43:01:08.80473 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 80 observations, RA-AO3-04, RA-AO2-12' /
+   source='1323-526', 'J1326-5256' RA=13:26:49.229137 DEC=-52:56:23.63309 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 12 observations, RA-AO3-04, RA-AO2-12' /
+!   source='1324+574', 'J1326+5712' RA=13:26:50.572337 DEC=+57:12:06.74540 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 319 observations, RA-AO2-12' /
+   source='1324+224', 'J1327+2210' RA=13:27:00.861311 DEC=+22:10:50.16276 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 36026 observations, RA-AO3-04, RA-AO2-12' /
+   source='1327+321', 'J1329+3154' RA=13:29:52.864906 DEC=+31:54:11.05448 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 617 observations, RA-AO3-04, RA-AO2-12' /
+   source='1334-127', 'J1337-1257' RA=13:37:39.782777 DEC=-12:57:24.69345 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 93307 observations, RA-AO3-04, RA-AO2-12' /
+   source='1351-018', 'J1354-0206' RA=13:54:06.895322 DEC=-02:06:03.19066 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 22569 observations, RA-AO3-04, RA-AO3-03, RA-AO2-03, RA-AO2-12' /
+!   source='1357+769', 'J1357+7643' RA=13:57:55.371538 DEC=+76:43:21.05098 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 226762 observations, RA-AO3-04, RA-AO2-12' /
+   source='1354-152', 'J1357-1527' RA=13:57:11.244977 DEC=-15:27:28.78695 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 3423 observations, RA-AO3-04, RA-AO2-12' /
+   source='1402+044', 'J1405+0415' RA=14:05:01.119814 DEC=+04:15:35.81874 equinox='J2000' rem='AGN, HIGHz, BAL QSO, rfc_2013d Petrov, 2013, unpublished 1370 observations, RA-AO3-04, RA-AO3-03, RA-AO2-12' /
+   source='1403+411', 'J1405+4056' RA=14:05:07.795440 DEC=+40:56:57.83098 equinox='J2000' rem='AGN, BAL QSO, rfc_2013d Petrov, 2013, unpublished 90 observations, RA-AO3-04, RA-AO2-12' /
+   source='1406-076', 'J1408-0752' RA=14:08:56.481199 DEC=-07:52:26.66668 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2135 observations, RA-AO3-04, RA-AO2-12' /
+   source='1413+135', 'J1415+1320' RA=14:15:58.817509 DEC=+13:20:23.71274 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1895 observations, RA-AO3-04, RA-AO2-12' /
+   source='1424-418', 'J1427-4206' RA=14:27:56.297562 DEC=-42:06:19.43770 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 18327 observations, RA-AO3-04, RA-AO2-12' /
+   source='1442+101', 'J1445+0958', 'OQ172' RA=14:45:16.465253 DEC=+09:58:36.07265 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 1336 observations, RA-AO3-04, RA-AO2-03, RA-AO2-12' /
+   source='1502+106', 'J1504+1029' RA=15:04:24.979783 DEC=+10:29:39.19840 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 15421 observations, RA-AO3-04, RA-AO2-12' /
+   source='1502+036', 'J1505+0326' RA=15:05:06.477156 DEC=+03:26:30.81249 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 5451 observations, RA-AO3-04, RA-AO2-12' /
+   source='1504-166', 'J1507-1652' RA=15:07:04.786961 DEC=-16:52:30.26713 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1595 observations, RA-AO3-04, RA-AO2-12' /
+   source='1508+572', 'J1510+5702' RA=15:10:02.922371 DEC=+57:02:43.37583 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 2400 observations, RA-AO3-04, RA-AO3-03, RA-AO2-12' /
+   source='1510-089', 'J1512-0905' RA=15:12:50.532926 DEC=-09:05:59.82980 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 6315 observations, RA-AO3-04, RA-AO2-12' /
+   source='1514+197', 'J1516+1932' RA=15:16:56.796164 DEC=+19:32:12.99191 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 2439 observations, RA-AO3-04, RA-AO2-12' /
+   source='1514-241', 'J1517-2422' RA=15:17:41.813131 DEC=-24:22:19.47616 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 7724 observations, RA-AO3-04, RA-AO2-12' /
+   source='1519-273', 'J1522-2730' RA=15:22:37.675987 DEC=-27:30:10.78560 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 15038 observations, RA-AO3-04, RA-AO2-12' /
+   source='1546+027', 'J1549+0237' RA=15:49:29.436845 DEC=+02:37:01.16316 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 15857 observations, RA-AO3-04, RA-AO2-12' /
+   source='1547+507', 'J1549+5038' RA=15:49:17.468556 DEC=+50:38:05.78805 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 1541 observations, RA-AO3-04, RA-AO2-12' /
+   source='1548+056', 'J1550+0527' RA=15:50:35.269243 DEC=+05:27:10.44825 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 8410 observations, RA-AO3-04, RA-AO2-12' /
+   source='1557+032', 'J1559+0304' RA=15:59:30.972614 DEC=+03:04:48.25670 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 1323 observations, RA-AO3-04, RA-AO2-12' /
+   source='1602-115', 'J1605-1139' RA=16:05:17.531656 DEC=-11:39:26.83121 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1740 observations, RA-AO3-04, RA-AO2-12' /
+   source='1604+315', 'J1606+3124' RA=16:06:08.518385 DEC=+31:24:46.45776 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 90 observations, RA-AO3-04, RA-AO2-03, RA-AO2-12' /
+   source='1606+106', 'J1608+1029' RA=16:08:46.203185 DEC=+10:29:07.77564 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 128489 observations, RA-AO3-04, RA-AO2-12' /
+   source='1611+343', 'J1613+3412' RA=16:13:41.064242 DEC=+34:12:47.90878 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 154703 observations, RA-AO3-04, RA-AO2-12' /
+   source='1617+229', 'J1619+2247' RA=16:19:14.824597 DEC=+22:47:47.85093 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 8180 observations, RA-AO3-04, RA-AO2-12' /
+   source='1622-253', 'J1625-2527' RA=16:25:46.891640 DEC=-25:27:38.32697 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 46898 observations, RA-AO3-04, RA-AO2-12' /
+   source='1633+382', 'J1635+3808', '4C38.41' RA=16:35:15.492975 DEC=+38:08:04.50043 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 16451 observations, RA-AO3-04, RA-AO3-05, RA-AO2-10, RA-AO2-12' /
+   source='1636+473', 'J1637+4717' RA=16:37:45.130558 DEC=+47:17:33.83103 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 4851 observations, RA-AO3-04, RA-AO2-12' /
+   source='1637+574', 'J1638+5720' RA=16:38:13.456297 DEC=+57:20:23.97898 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 8888 observations, RA-AO3-04, RA-AO2-12' /
+   source='1638+398', 'J1640+3946', 'NRAO512' RA=16:40:29.632771 DEC=+39:46:46.02835 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 112829 observations, RA-AO3-04, RA-AO2-12' /
+!   source='1641+399', 'J1642+3948', '3C345' RA=16:42:58.809963 DEC=+39:48:36.99385 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 51938 observations, RA-AO3-04, RA-AO3-05, RA-AO2-10, RA-AO2-12' /
+!   source='1642+690', 'J1642+6856' RA=16:42:07.848507 DEC=+68:56:39.75636 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 18956 observations, RA-AO3-04, RA-AO2-11, RA-AO2-12' /
+   source='1639-062', 'J1642-0621' RA=16:42:02.177715 DEC=-06:21:23.69513 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 7228 observations, RA-AO3-04, RA-AO2-12' /
+   source='1655+077', 'J1658+0741' RA=16:58:09.011465 DEC=+07:41:27.54032 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1094 observations, RA-AO3-04, RA-AO2-12' /
+   source='1656-075', 'J1658-0739' RA=16:58:44.061993 DEC=-07:39:17.69432 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 1558 observations, RA-AO3-04, RA-AO2-03, RA-AO2-12' /
+   source='1717+178', 'J1719+1745' RA=17:19:13.048481 DEC=+17:45:06.43714 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 2632 observations, RA-AO3-04, RA-AO2-12' /
+   source='1730-130', 'J1733-1304', 'NRAO530' RA=17:33:02.705787 DEC=-13:04:49.54838 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 18002 observations, RA-AO3-04, RA-AO2-12' /
+   source='1732+389', 'J1734+3857' RA=17:34:20.578539 DEC=+38:57:51.44303 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 5259 observations, RA-AO3-04, RA-AO2-12' /
+   source='1739+522', 'J1740+5211' RA=17:40:36.977846 DEC=+52:11:43.40733 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 209348 observations, RA-AO3-04, RA-AO2-12' /
+   source='1741-038', 'J1743-0350' RA=17:43:58.856134 DEC=-03:50:04.61684 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 173236 observations, RA-AO3-04, RA-AO2-12' /
+   source='1749+096', 'J1751+0939' RA=17:51:32.818572 DEC=+09:39:00.72830 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 144372 observations, RA-AO3-04, RA-AO2-12' /
+   source='1751+288', 'J1753+2848' RA=17:53:42.473645 DEC=+28:48:04.93876 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 5304 observations, RA-AO3-04, RA-AO2-12' /
+   source='1751+441', 'J1753+4409' RA=17:53:22.647889 DEC=+44:09:45.68615 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 1851 observations, RA-AO3-04, RA-AO2-12' /
+   source='1758+388', 'J1800+3848' RA=18:00:24.765361 DEC=+38:48:30.69739 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 3569 observations, RA-AO3-04, RA-AO2-12' /
+   source='1803+784', 'J1800+7828' RA=18:00:45.683902 DEC=+78:28:04.01838 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 217073 observations, RA-AO3-04, RA-AO2-12' /
+   source='1800+440', 'J1801+4404' RA=18:01:32.314821 DEC=+44:04:21.90023 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 5984 observations, RA-AO3-04, RA-AO2-12' /
+   source='1759-396', 'J1802-3940' RA=18:02:42.680061 DEC=-39:40:07.90826 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2889 observations, RA-AO3-04, RA-AO2-12' /
+   source='1807+698', 'J1806+6949', '3C371' RA=18:06:50.680644 DEC=+69:49:28.10848 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 101673 observations, RA-AO3-04, RA-AO2-12' /
+   source='1817+387', 'J1819+3845' RA=18:19:26.547379 DEC=+38:45:01.78611 equinox='J2000' rem='AGN, IDV, rfc_2013d Petrov, 2013, unpublished 89 observations, RA-AO3-04, RA-AO2-12' /
+   source='1823+689', 'J1823+6857' RA=18:23:32.853904 DEC=+68:57:52.61250 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1793 observations, RA-AO3-04, RA-AO2-12' /
+   source='1823+568', 'J1824+5651' RA=18:24:07.068371 DEC=+56:51:01.49076 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 8126 observations, RA-AO3-04, RA-AO2-12' /
+   source='1828+487', 'J1829+4844', '3C380' RA=18:29:31.780879 DEC=+48:44:46.16038 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 87 observations, RA-AO3-04, RA-AO2-12' /
+   source='1842+681', 'J1842+6809' RA=18:42:33.641683 DEC=+68:09:25.22773 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 3737 observations, RA-AO3-04, RA-AO2-12' /
+   source='1846+322', 'J1848+3219' RA=18:48:22.088579 DEC=+32:19:02.60367 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 15923 observations, RA-AO3-04, RA-AO2-12' /
+   source='1849+670', 'J1849+6705' RA=18:49:16.072282 DEC=+67:05:41.68023 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 7270 observations, RA-AO3-04, RA-AO2-12' /
+   source='1908-201', 'J1911-2006' RA=19:11:09.652895 DEC=-20:06:55.10919 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 19784 observations, RA-AO3-04, RA-AO2-12' /
+   source='1920-211', 'J1923-2104' RA=19:23:32.189817 DEC=-21:04:33.33318 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2687 observations, RA-AO3-04, RA-AO2-12' /
+   source='1921-293', 'J1924-2914' RA=19:24:51.055956 DEC=-29:14:30.12114 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 45960 observations, RA-AO3-04, RA-AO2-12' /
+   source='1928+738', 'J1927+7358' RA=19:27:48.495148 DEC=+73:58:01.56986 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 6641 observations, RA-AO3-04, RA-AO2-12' /
+   source='1933-400', 'J1937-3958' RA=19:37:16.217357 DEC=-39:58:01.55318 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 499 observations, RA-AO3-04, RA-AO2-12' /
+!   source='1937-101', 'J1939-1002' RA=19:39:57.256582 DEC=-10:02:41.52079 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 906 observations, RA-AO3-04, RA-AO2-03, RA-AO2-12' /
+   source='1936-155', 'J1939-1525' RA=19:39:26.657748 DEC=-15:25:43.05857 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2776 observations, RA-AO3-04, RA-AO2-12' /
+   source='1954+513', 'J1955+5131' RA=19:55:42.738247 DEC=+51:31:48.54613 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 3700 observations, RA-AO3-04, RA-AO2-12' /
+   source='1957+405', 'J1959+4044', 'CYGNUS-A', 'CYG-A' RA=19:59:28.356463 DEC=+40:44:02.09701 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 293 observations, RA-AO3-04, RA-AO2-12' /
+   source='1958-179', 'J2000-1748' RA=20:00:57.090445 DEC=-17:48:57.67271 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 34703 observations, RA-AO3-04, RA-AO2-12' /
+!   source='2000-330', 'J2003-3251' RA=20:03:24.116342 DEC=-32:51:45.13295 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 631 observations, RA-AO3-04, RA-AO2-12' /
+   source='2007+777', 'J2005+7752' RA=20:05:30.998496 DEC=+77:52:43.24753 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 16338 observations, RA-AO3-04, RA-AO2-12' /
+   source='2010+723', 'J2009+7229' RA=20:09:52.303862 DEC=+72:29:19.35101 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 130 observations, RA-AO3-04, RA-AO2-12' /
+   source='2008-159', 'J2011-1546' RA=20:11:15.710930 DEC=-15:46:40.25384 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 9163 observations, RA-AO3-04, RA-AO2-12' /
+   source='2013+370', 'J2015+3710' RA=20:15:28.729772 DEC=+37:10:59.51527 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 282 observations, RA-AO3-04, RA-AO2-12' /
+   source='2021+614', 'J2022+6136' RA=20:22:06.681752 DEC=+61:36:58.80476 equinox='J2000' rem='AGN, CSO, rfc_2013d Petrov, 2013, unpublished 3249 observations, RA-AO3-04, RA-AO2-09, RA-AO2-12' /
+   source='2022+542', 'J2023+5427' RA=20:23:55.844020 DEC=+54:27:35.82889 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 140 observations, RA-AO3-04, RA-AO2-12' /
+   source='2029+121', 'J2031+1219' RA=20:31:54.994268 DEC=+12:19:41.34011 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 2970 observations, RA-AO3-04, RA-AO2-12' /
+   source='2032+107', 'J2035+1056' RA=20:35:22.333300 DEC=+10:56:06.78853 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 135 observations, RA-AO3-04, RA-AO2-12' /
+   source='2037+511', 'J2038+5119', '3C418' RA=20:38:37.034732 DEC=+51:19:12.66253 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 108656 observations, RA-AO3-04, RA-AO2-12' /
+   source='2047+098', 'J2049+1003' RA=20:49:45.864981 DEC=+10:03:14.39801 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 135 observations, RA-AO3-04, RA-AO2-12' /
+   source='2052-474', 'J2056-4714' RA=20:56:16.359817 DEC=-47:14:47.62776 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 8508 observations, RA-AO3-04, RA-AO2-12' /
+   source='2059+034', 'J2101+0341' RA=21:01:38.834159 DEC=+03:41:31.32076 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 13049 observations, RA-AO3-04, RA-AO2-12' /
+   source='2107+353', 'J2109+3532' RA=21:09:31.878723 DEC=+35:32:57.59753 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 135 observations, RA-AO3-04, RA-AO2-12' /
+   source='2121+053', 'J2123+0535' RA=21:23:44.517402 DEC=+05:35:22.09291 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 53139 observations, RA-AO3-04, RA-AO2-12' /
+   source='2126-158', 'J2129-1538' RA=21:29:12.175898 DEC=-15:38:41.04155 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 7681 observations, RA-AO3-04, RA-AO2-12' /
+   source='2128-123', 'J2131-1207' RA=21:31:35.261749 DEC=-12:07:04.79619 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 15528 observations, RA-AO3-04, RA-AO2-12' /
+   source='2134+004', 'J2136+0041' RA=21:36:38.586326 DEC=+00:41:54.21264 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 28297 observations, RA-AO3-04, RA-AO2-12' /
+   source='2135+508', 'J2137+5101' RA=21:37:00.986207 DEC=+51:01:36.12906 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 64 observations, RA-AO3-04, RA-AO2-12' /
+   source='2136+141', 'J2139+1423' RA=21:39:01.309269 DEC=+14:23:35.99209 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 52968 observations, RA-AO3-04, RA-AO2-12' /
+   source='2145+067', 'J2148+0657' RA=21:48:05.458671 DEC=+06:57:38.60409 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 104350 observations, RA-AO3-04, RA-AO2-12' /
+   source='2149-307', 'J2151-3027' RA=21:51:55.523987 DEC=-30:27:53.69817 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1072 observations, RA-AO3-04, RA-AO2-12' /
+   source='2155-152', 'J2158-1501' RA=21:58:06.281898 DEC=-15:01:09.32784 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1056 observations, RA-AO3-04, RA-AO2-12' /
+!   source='2200+420', 'J2202+4216', 'BLLAC' RA=22:02:43.291371 DEC=+42:16:39.97987 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 59417 observations, RA-AO3-04, RA-AO2-12' /
+   source='2201+171', 'J2203+1725' RA=22:03:26.893682 DEC=+17:25:48.24764 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 325 observations, RA-AO3-04, RA-AO2-12' /
+   source='2201+315', 'J2203+3145' RA=22:03:14.975788 DEC=+31:45:38.26991 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 33331 observations, RA-AO3-04, RA-AO2-12' /
+   source='2209+236', 'J2212+2355' RA=22:12:05.966312 DEC=+23:55:40.54374 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 17068 observations, RA-AO3-04, RA-AO2-12' /
+!   source='2215+020', 'J2217+0220' RA=22:17:48.237927 DEC=+02:20:10.71214 equinox='J2000' rem='AGN, HIGHz, rfc_2013d Petrov, 2013, unpublished 383 observations, RA-AO3-04, RA-AO3-03, RA-AO2-03, RA-AO2-12' /
+   source='2216-038', 'J2218-0335' RA=22:18:52.037725 DEC=-03:35:36.87962 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 10937 observations, RA-AO3-04, RA-AO2-12' /
+   source='2223-052', 'J2225-0457', '3C446' RA=22:25:47.259295 DEC=-04:57:01.39089 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 55527 observations, RA-AO3-04, RA-AO2-12' /
+   source='2227-088', 'J2229-0832' RA=22:29:40.084340 DEC=-08:32:54.43561 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 9562 observations, RA-AO3-04, RA-AO2-12' /
+!   source='2230+114', 'J2232+1143', 'CTA102' RA=22:32:36.408905 DEC=+11:43:50.90395 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 5100 observations, RA-AO3-04, RA-AO2-12' /
+   source='2239+096', 'J2241+0953' RA=22:41:49.717305 DEC=+09:53:52.44441 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 299 observations, RA-AO3-04, RA-AO2-12' /
+   source='2243-123', 'J2246-1206' RA=22:46:18.231974 DEC=-12:06:51.27766 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 23987 observations, RA-AO3-04, RA-AO2-12' /
+!   source='2251+158', 'J2253+1608', '3C454.3' RA=22:53:57.747940 DEC=+16:08:53.56074 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 40570 observations, RA-AO3-04, RA-AO2-12' /
+   source='2255-282', 'J2258-2758' RA=22:58:05.962882 DEC=-27:58:21.25680 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 30802 observations, RA-AO3-04, RA-AO2-12' /
+   source='2309+454', 'J2311+4543' RA=23:11:47.408972 DEC=+45:43:56.01648 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 2633 observations, RA-AO3-04, RA-AO2-12' /
+   source='2328+107', 'J2330+1100' RA=23:30:40.852261 DEC=+11:00:18.70969 equinox='J2000' rem='AGN, MASIV, rfc_2013d Petrov, 2013, unpublished 754 observations, RA-AO3-04, RA-AO2-12' /
+   source='2345-167', 'J2348-1631' RA=23:48:02.608529 DEC=-16:31:12.02222 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 1596 observations, RA-AO3-04, RA-AO2-12' /
+   source='2351+456', 'J2354+4553' RA=23:54:21.680217 DEC=+45:53:04.23639 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 2579 observations, RA-AO3-04, RA-AO2-12' /
+   source='2355-534', 'J2357-5311' RA=23:57:53.266076 DEC=-53:11:13.68941 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 266 observations, RA-AO3-04, RA-AO2-12' /
+!
+!endcat /
+! ----****#### Pre-AO4 sources ####****----
+   source='0014+813', 'J0017+8135' RA=00:17:08.474899 DEC=+81:35:08.13656 equinox='J2000' rem='HIGHz, rfc_2013d Petrov, 2013, unpublished 73794 observations, RA-AO3-03, RA-AO2-03' /
+   source='0108+388', 'J0111+3906' RA=01:11:37.316752  DEC=+39:06:28.10384 equinox='J2000' rem='CSO, rfc_2013d Petrov, 2013, unpublished 738 observations, RA-AO2-09' /
+!   source='0134+329', 'J0137+3309', '3C48'  RA=01:37:41.299440  DEC=+33:09:35.13299  equinox='J2000'  rem='WSRT calibrator, rfc_2013d Petrov, 2013, unpublished 140 observations' /
+!   source='0538+498', 'J0542+4951', '3C147' RA=05:42:36.137900  DEC=+49:51:07.23375  equinox='J2000'  rem='WSRT calibrator, rfc_2013d Petrov, 2013, unpublished 1742 observations' /
+   source='0646+600', 'J0650+6001' RA=06:50:31.254393  DEC=+60:01:44.55542 equinox='J2000' rem='CSO, rfc_2013d Petrov, 2013, unpublished 115 observations, RA-AO2-09' /
+   source='0742+103', 'J0745+1011' RA=07:45:33.059523  DEC=+10:11:12.69222 equinox='J2000' rem='CSO, rfc_2013d Petrov, 2013, unpublished 11577 observations, RA-AO2-09' /
+   source='0749+426', 'J0753+4231' RA=07:53:03.337499 DEC=+42:31:30.76523 equinox='J2000' rem='HIGHz, rfc_2013d Petrov, 2013, unpublished 80 observations, RA-AO2-03' /
+   source='0805+538', 'J0809+5341' RA=08:09:41.732708  DEC=+53:41:25.09259   equinox='J2000'  rem='Flaring MASTER blazar from ATEL #6074' /
+   source='0951+693', 'J0955+6903', 'M81' RA=09:55:33.173065 DEC=+69:03:55.06083 equinox='J2000' rem='rfc_2013d Petrov, 2013, unpublished 3429 observations, RA-AO3-07' /
+   source='1125+596', 'J1128+5925' RA=11:28:13.340665 DEC=+59:25:14.79849 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 419 observations, IDV Quasar (z=1.795) suggested by Thomas Krichbaum' /
+   source='1237-113', 'J1239-1137', 'M104' RA=12:39:59.431858  DEC=-11:37:22.99492 equinox='J2000' rem='rfc_2013d Petrov, 2013, unpublished 279 observations' /
+!   source='1328+307', 'J1331+3030', '3C286' RA=13:31:08.288070  DEC=+30:30:32.95924  equinox='J2000'  rem='WSRT calibrator, not for 92cm, rfc_2013d Petrov, 2013, unpublished 542 observations' /
+!   source='1409+524', 'J1411+5212', '3C295' RA=14:11:20.407581  DEC=+52:12:11.29094  equinox='J2000'  rem='WSRT calibrator, 92cm only, rfc_2013d Petrov, 2013, unpublished 6 observations' /
+   source='1509+054', 'J1511+0518' RA=15:11:41.266367  DEC=+05:18:09.25875 equinox='J2000' rem='CSO, rfc_2013d Petrov, 2013, unpublished 313 observations, RA-AO2-09' /
+   source='1600-489', 'J1603-4904' RA=16:03:50.684533 DEC=-49:04:05.50492 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 51 observations, possible gamma-ray bright CSO' /
+   source='1652+398', 'J1653+3945', 'MRK501' RA=16:53:52.216683  DEC=+39:45:36.60881 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 6490 observations, RA-AO3-04, RA-AO3-09, RA-AO2-04' /
+   source='1742-289', 'J1745-2900', 'SGR-A' RA=17:45:40.036054  DEC=-29:00:28.16801  equinox='J2000'  rem='rfc_2013d Petrov, 2013, unpublished 44 observations, RA-AO2-07'   /
+   source='1845+797', 'J1842+7946', '3C390.3' RA=18:42:08.989892  DEC=+79:46:17.12812 equinox='J2000' rem='ImgTarget, rfc_2013d Petrov, 2013, unpublished 1241 observations, RA-AO2-11' /
+!   source='1928+154', 'J1930+1532' RA=19:30:52.766993  DEC=+15:32:34.42720 equinox='J2000' rem='clock offset calibrator for W51_E8, rfc_2013d Petrov, 2013, unpublished 139 observations' /
+   source='2022-077', 'J2025-0735' RA=20:25:40.660411 DEC=-07:35:52.68916 equinox='J2000' rem='AGN, rfc_2013d Petrov, 2013, unpublished 81 observations, RA-AO3-04, RA-AO2-12' /
+!   source='2113+293', 'J2115+2933' RA=21:15:29.413455  DEC=+29:33:38.36687 equinox='J2000' rem='clock offset calibrator for ON1, rfc_2013d Petrov, 2013, unpublished 41166 observations' /
+!   source='AH_SCO'           RA=17:11:17.02  DEC=-32:20:17.3  equinox='J2000' rem='H2O stellar maser; ' /
+!   source='B0329+54', 'J0332+5434' RA=03:32:59.368000 DEC=+54:34:43.57000 equinox='J2000' rem='PSR High dispersed DM=26.833, RA-AO2-01' /
+!   source='B0355+54', 'J0358+5413' RA=03:58:53.716500 DEC=+54:13:13.72700 equinox='J2000' rem='PSR High dispersed DM= 57.1420' /
+!   source='B0525+21', 'J0528+2200' RA=05:28:52.264000 DEC=+22:00:04.00000 equinox='J2000' rem='PSR High dispersed DM=50.937, RA-AO2-06' /
+!   source='B0540-69', 'J0540-6919' RA=05:40:11.202000 DEC=-69:19:54.17000 equinox='J2000' rem='PSR GP DM=146.5 Crab-like pulsar in BMC' /
+!   source='B0809+74', 'J0814+7429' RA=08:14:59.500000 DEC=+74:29:05.70000 equinox='J2000' rem='PSR Low dispersed DM=5.75, RA-AO2-06' /
+!   source='B0834+06', 'J0837+0610' RA=08:37:05.642000 DEC=+06:10:14.56000 equinox='J2000' rem='PSR Low dispersed DM=12.889, RA-AO2-06' /
+!   source='B0919+06', 'J0922+0638' RA=09:22:14.022    DEC=+06:38:23.30    equinox='J2000' rem='PSR DM=27.271, position from 2004MNRAS.353.1311H, RA-AO2-06' /
+!   source='B0950+08', 'J0953+0755' RA=09:53:09.309700 DEC=+07:55:35.75000 equinox='J2000' rem='PSR Low dispersed DM=2.958, RA-AO2-06' /
+!   source='B1133+16', 'J1136+1551' RA=11:36:03.247700 DEC=+15:51:04.48000 equinox='J2000' rem='PSR Low dispersed DM=4.864, RA-AO2-06' /
+!   source='B1237+25', 'J1239+2453' RA=12:39:40.461400 DEC=+24:53:49.29000 equinox='J2000' rem='PSR Low dispersed DM=9.242, RA-AO2-06' /
+!   source='B1508+55', 'J1509+5531' RA=15:09:25.629800 DEC=+55:31:32.39400 equinox='J2000' rem='PSR High dispersed DM=19.613' /
+!   source='B1641-45', 'J1644-4559' RA=16:44:49.281000 DEC=-45:59:09.50000 equinox='J2000' rem='PSR High dispersed DM=478.8, RA-AO3-08, RA-AO2-01' /
+!   source='B1749-28', 'J1752-2806' RA=17:52:58.689600 DEC=-28:06:37.30000 equinox='J2000' rem='PSR High dispersed DM=50.372, RA-AO2-01' /
+!   source='B1818-04', 'J1820-0427' RA=18:20:52.600000 DEC=-04:27:38.10000 equinox='J2000' rem='PSR High dispersed DM= 84.435, RA-AO2-01' /
+!   source='B1820-30A', 'J1823-3021' RA=18:23:40.487010 DEC=-30:21:40.12700 equinox='J2000' rem='PSR GP DM=86.8797' /
+!   source='B1821-24A', 'J1824-2452' RA=18:24:32.007960 DEC=-24:52:10.82400 equinox='J2000' rem='PSR GP DM=120.502' /
+!   source='B1919+21', 'J1921+2153' RA=19:21:44.815000 DEC=+21:53:02.25000 equinox='J2000' rem='PSR Low dispersed DM=12.455, RA-AO2-06' /
+!   source='B1929+10', 'J1932+1059' RA=19:32:13.949700 DEC=+10:59:32.42000 equinox='J2000' rem='PSR Low dispersed DM=3.180, RA-AO3-01, RA-AO2-06' /
+!   source='B1933+16', 'J1932+1059' RA=19:35:47.825900 DEC=+16:16:39.98600 equinox='J2000' rem='PSR High dispersed DM=158.521, RA-AO3-08, RA-AO2-01' /
+!   source='B1946+35', 'J1948+3540' RA=19:48:25.006700 DEC=+35:40:11.05700 equinox='J2000' rem='PSR DM=129.075, RA-AO2-01' /
+!   source='B1957+20', 'J1959+2048' RA=19:59:36.769880 DEC=+20:48:15.12220 equinox='J2000' rem='PSR GP, High dispersed DM=29.1168' /
+!   source='B2020+28', 'J2022+2854' RA=20:22:37.067100 DEC=+28:54:23.10400 equinox='J2000' rem='PSR Low/high dispersed DM=24.640' /
+!   source='B2111+46', 'J2113+4644' RA=21:13:24.307000 DEC=+46:44:08.70000 equinox='J2000' rem='PSR High dispersed DM=141.26' /
+!   source='B2217+47', 'J2219+4754' RA=22:19:48.139000 DEC=+47:54:53.93000 equinox='J2000' rem='PSR High dispersed DM=43.519' /
+!   source='CEP_A_OH', 'CEPHEUS_A_OH'       RA=22:56:17.87    DEC=62:01:48.6     equinox='J2000' rem='OH maser; positions from 2005ApJS160...220Fish, RA-AO2-08, RA-AO2-13' /
+!   source='CEP_HW3_H2O', 'CEPHEUS_A_HW3_H2O'  RA=22:56:18.1753  DEC=62:01:46.2114  equinox='J2000' rem='H2O maser; positions from 2012ApJ748...146Chibueze, RA-AO2-08' /
+   source='CIR-X1', 'CIRX1', 'CIRX-1', 'BRCIR' RA=15:20:40.85 DEC=-57:10:00.1  equinox='J2000' rem='microquasar' /
+   source='CRAB', 'J0534+2200','B0531+21' RA=05:34:31.973000 DEC=+22:00:52.06000 equinox='J2000' rem='PSR GP DM=56.791, RA-AO2-05' /
+   source='CYG-X3', 'CYGX3', 'CYGX-3', 'V1521CYG' RA=20:32:25.78 DEC=+40:57:27.9    equinox='J2000' rem='microquasar' /
+!   source='FERMIJ0623-3351'        RA=06:23:39.92 DEC=-33:50:14.6     equinox='J2000' rem='extragalactic gamma-ray transient' /
+!   source='G045.472', 'G045.472+00.134_OH' RA=19:14:07.36    DEC=11:12:15.6     equinox='J2000' rem='OH maser; positions from 2000ApJS...129Argon' /
+!   source='G0.547', 'G0.547-0.851_H2O'   RA=17:50:14.52 DEC=-28:54:28.8  equinox='J2000' rem='H2O maser' /
+!   source='G10.473', 'G10.473+0.027_H2O'  RA=18:08:38.30 DEC=-19:51:48.8  equinox='J2000' rem='H2O maser' /
+!   source='G10.623', 'G10.623-0.383_H2O'  RA=18:10:28.57 DEC=-19:55:49.4  equinox='J2000' rem='H2O maser' /
+!   source='G11.498', 'G11.498-1.486_H2O'  RA=18:16:22.32 DEC=-19:41:26.1  equinox='J2000' rem='H2O maser' /
+!   source='G12.209', 'G12.209-0.102_H2O'  RA=18:12:39.88 DEC=-18:24:17.1  equinox='J2000' rem='H2O maser' /
+!   source='G12.681', 'G12.681-0.183_H2O'  RA=18:13:54.82 DEC=-18:01:47.0  equinox='J2000' rem='H2O maser' /
+!   source='G15.028', 'G15.028-0.673_H2O'  RA=18:20:23.04 DEC=-16:11:48.4  equinox='J2000' rem='H2O maser' /
+!   source='G17.638', 'G17.638+0.156_H2O'  RA=18:22:26.45 DEC=-13:30:12.4  equinox='J2000' rem='H2O maser' /
+   source='G25.650', 'G25.650+1.050_H2O', 'G25.65+1.05'  RA=18:34:20.957 DEC=-05:59:42.15  equinox='J2000' rem='H2O maser; position from 2005AJ....130..711K; RA-AO4-TOO1' /
+!   source='G284.351', 'G284.351-0.418_H2O' RA=10:24:10.92 DEC=-57:52:33.9  equinox='J2000' rem='H2O maser' /
+!   source='G291.271', 'G291.271-0.719_H2O' RA=11:11:49.82 DEC=-61:18:53.8  equinox='J2000' rem='H2O maser' /
+!   source='G291.284', 'G291.284-0.716_H2O' RA=11:11:56.68 DEC=-61:19:00.9  equinox='J2000' rem='H2O maser' /
+!   source='G291.579', 'G291.579-0.431_H2O' RA=11:15:05.77 DEC=-61:09:39.5  equinox='J2000' rem='H2O maser' /
+!   source='G294.511', 'G294.511-1.621_OH'       RA=11:35:32.22    DEC=-63:14:42.6    equinox='J2000' rem='OH maser; positions from 1998MNRAS297...215Caswell'/
+!   source='G299.013', 'G299.013+0.128_H2O' RA=12:17:24.65 DEC=-62:29:04.4  equinox='J2000' rem='H2O maser' /
+!   source='G300.504', 'G300.504-0.176_H2O' RA=12:30:03.60 DEC=-62:56:48.3  equinox='J2000' rem='H2O maser' /
+!   source='G301.136', 'G301.136-0.226_H2O' RA=12:35:34.92 DEC=-63:02:31.0  equinox='J2000' rem='H2O maser' /
+!   source='G305.362', 'G305.362+0.150_H2O' RA=13:12:35.87 DEC=-62:37:18.9  equinox='J2000' rem='H2O maser' /
+!   source='G305.799', 'G305.799-0.245_H2O' RA=13:16:42.92 DEC=-62:58:31.7  equinox='J2000' rem='H2O maser' /
+!   source='G318.050', 'G318.050+0.087_H2O' RA=14:53:42.62 DEC=-59:08:52.3  equinox='J2000' rem='H2O maser' /
+!   source='G323.740', 'G323.740-0.263_H2O' RA=15:31:45.48 DEC=-56:30:49.6  equinox='J2000' rem='H2O maser' /
+!   source='G326.662', 'G326.662+0.521_H2O' RA=15:45:02.73 DEC=-54:09:03.3  equinox='J2000' rem='H2O maser' /
+!   source='G326.670', 'G326.670+0.554_H2O' RA=15:44:57.03 DEC=-54:07:10.6  equinox='J2000' rem='H2O maser' /
+!   source='G327.291', 'G327.291-0.578_H2O' RA=15:53:07.65 DEC=-54:37:07.2  equinox='J2000' rem='H2O maser' /
+!   source='G327.402', 'G327.402+0.445_H2O' RA=15:49:19.32 DEC=-53:45:13.8  equinox='J2000' rem='H2O maser' /
+!   source='G328.254', 'G328.254-0.532_H2O' RA=15:57:59.69 DEC=-53:58:00.7  equinox='J2000' rem='H2O maser' /
+!   source='G328.306', 'G328.306+0.432_H2O' RA=15:54:05.91 DEC=-53:11:37.4  equinox='J2000' rem='H2O maser' /
+!   source='G330.878', 'G330.878-0.367_OH'   RA=16:10:20.01    DEC=-52:06:07.7    equinox='J2000' rem='OH maser; positions from 1998MNRAS297...215Caswell'/
+!   source='G330.954', 'G330.954-0.182_H2O' RA=16:09:52.65 DEC=-51:54:54.6  equinox='J2000' rem='H2O maser' /
+!   source='G331.132', 'G331.132-0.244_H2O' RA=16:10:59.73 DEC=-51:50:22.5  equinox='J2000' rem='H2O maser' /
+!   source='G331.442', 'G331.442-0.187_H2O' RA=16:12:12.46 DEC=-51:35:09.3  equinox='J2000' rem='H2O maser' /
+!   source='G331.512', 'G331.512-0.103_H2O' RA=16:12:10.01 DEC=-51:28:36.7  equinox='J2000' rem='H2O maser' /
+!   source='G333.234', 'G333.234-0.060_H2O' RA=16:19:50.85 DEC=-50:15:09.7  equinox='J2000' rem='H2O maser' /
+!   source='G336.018', 'G336.018-0.827_H2O' RA=16:35:09.35 DEC=-48:46:47.7  equinox='J2000' rem='H2O maser' /
+!   source='G336.994', 'G336.994-0.027_H2O' RA=16:35:34.01 DEC=-47:31:12.2  equinox='J2000' rem='H2O maser' /
+!   source='G337.404', 'G337.404-0.402_H2O' RA=16:38:50.57 DEC=-47:28:00.8  equinox='J2000' rem='H2O maser' /
+!   source='G337.916', 'G337.916-0.477_H2O' RA=16:41:10.49 DEC=-47:08:02.9  equinox='J2000' rem='H2O maser' /
+!   source='G338.925', 'G338.925+0.556_H2O' RA=16:40:33.63 DEC=-45:41:37.9  equinox='J2000' rem='H2O maser' /
+!   source='G341.218', 'G341.218-0.212_H2O' RA=16:52:17.92 DEC=-44:26:51.6  equinox='J2000' rem='H2O maser' /
+!   source='G34.26', 'G34.26+0.1', 'G34.26+0.1_H2O', 'G34.26+0.15_OH'     RA=18:53:18.685   DEC=01:14:59.9     equinox='J2000' rem='OH maser; positions from 2001MNRAS320...217Slysh, RA-AO2-08, RA-AO2-13' /
+!   source='G343.127', 'G343.127-0.063_H2O' RA=16:58:17.29 DEC=-42:52:06.6  equinox='J2000' rem='H2O maser' /
+!   source='G345.699', 'G345.699-0.090_H2O' RA=17:06:50.72 DEC=-40:50:58.9  equinox='J2000' rem='H2O maser' /
+!   source='G348.726', 'G348.726-1.038_H2O' RA=17:20:06.42 DEC=-38:57:13.2  equinox='J2000' rem='H2O maser' /
+!   source='G349.092', 'G349.092+0.105_H2O' RA=17:16:24.66 DEC=-37:59:45.4  equinox='J2000' rem='H2O maser' /
+!   source='G351.243', 'G351.243+0.671_H2O' RA=17:20:17.76 DEC=-35:54:42.8  equinox='J2000' rem='H2O maser' /
+!   source='G351.417', 'G351.417+0', 'G351.417+0.645_OH'   RA=17:20:53.39    DEC=-35:47:01.8    equinox='J2000' rem='OH maser; positions from 1998MNRAS297...215Caswell, RA-AO2-13'/
+!!   source='G351.417', 'G351.417+0.646_H2O' RA=17:20:53.29 DEC=-35:46:58.3  equinox='J2000' rem='H2O maser' /
+!   source='G351.582', 'G351.582-0.353_H2O' RA=17:25:25.35 DEC=-36:12:44.0  equinox='J2000' rem='H2O maser' /
+!   source='G351.775', 'G351.775-0', 'G351.775-0.536_OH'   RA=17:26:42.56    DEC=-36:09:17.6    equinox='J2000' rem='OH maser; positions from 1998MNRAS297...215Caswell, RA-AO2-13'/
+!   source='G352.630', 'G352.630-1.067_H2O' RA=17:31:13.94 DEC=-35:44:08.8  equinox='J2000' rem='H2O maser' /
+!   source='G353.273', 'G353.273+0.641_H2O' RA=17:26:01.57 DEC=-34:15:14.7  equinox='J2000' rem='H2O maser' /
+!   source='G359.137', 'G359.137+0.032_H2O' RA=17:43:25.61 DEC=-29:39:18.6  equinox='J2000' rem='H2O maser' /
+   source='GRS1915+105', 'GRS1915', 'V1487AQL' RA=19:15:11.55 DEC=+10:56:44.8  equinox='J2000' rem='microquasar' /
+!   source='IC1396N', 'IC1396N_H2O'        RA=21:40:41.75 DEC=+58:16:11.9  equinox='J2000' rem='H2O maser, RA-AO2-17' /
+!   source='IRAS15193+3132_H2O', 'IRAS1519', 'VS_CRB', 'IRAS15193+31'   RA=15:21:23.95608 DEC=31:22:02.5730  equinox='J2000' rem='H2O WF maser; positions from Simbad, RA-AO2-13'/
+!   source='IRAS1629', 'IRAS16293-2422_H2O'     RA=16:32:22.82048 DEC=-24:28:36.3172 equinox='J2000' rem='H2O maser; positions from 2007PASJ59...1107H, RA-AO2-13' /
+!   source='IRAS1804', 'IRAS18043-2116'   RA=18:07:21.10  DEC=-21:16:14.2  equinox='J2000' rem='H2O stellar maser; ' /
+!   source='IRAS1846', 'IRAS18461-0136'   RA=18:48:46.1   DEC=-01:33:06    equinox='J2000' rem='H2O stellar maser; ' /
+!   source='IRAS1947', 'IRAS19474+2637'   RA=19:49:32.6   DEC=+26:45:14    equinox='J2000' rem='H2O stellar maser; ' /
+!   source='IRAS2130', 'IRAS21306+5540'   RA=21:32:12.44  DEC=+55:53:49.72 equinox='J2000' rem='H2O stellar maser; ' /
+!   source='IRC10414', 'IRC10414_H2O'  RA=18:23:17.866   DEC=-13:42:47.67   equinox='J2000' rem='H2O maser; positions for SiO masers from 2008PASJ60..1051Ueda, RA-AO2-13'/
+!   source='J0218+4232'             RA=02:18:06.351000 DEC=+42:32:17.43000 equinox='J2000' rem='PSR GP DM=61.252' /
+!   source='J0437-4715'             RA=04:37:15.883250 DEC=-47:15:09.03186 equinox='J2000' rem='PSR Low dispersed DM=2.64476, RA-AO2-06' /
+!   source='J0537-6910'             RA=05:37:47.416000 DEC=-69:10:19.88000 equinox='J2000' rem='PSR GP DM=146' /
+!   source='J1012-5830'             RA=10:12:54.900000 DEC=-58:30:25.60000 equinox='J2000' rem='PSR GP DM=294' /
+!   source='J1701-3006'             RA=17:01:12.822200 DEC=-30:06:51.82000 equinox='J2000' rem='PSR GP DM=113.291' /
+!   source='J1843-1113'             RA=18:43:41.262250 DEC=-11:13:31.05200 equinox='J2000' rem='PSR GP DM=59.96' /
+!   source='J2022+3842'             RA=20:22:21.689000 DEC=+38:42:14.82000 equinox='J2000' rem='PSR GP, High dispersed DM=429.1' /
+!   source='LSI+61303'              RA=02:40:31.66516  DEC=+61:13:45.6115  equinox='J2000' rem='microquasar, RA-AO2-16' /
+!!   source='NCEN2013'               RA=13:54:45.34 DEC=-59:09:04.2     equinox='J2000' rem='NOVA Cen 2013' /
+!!   source='NDEL2013', 'V339DEL'    RA=20:23:30.68 DEC=+20:46:03.8     equinox='J2000' rem='NOVA Del 2013' /
+!   source='NGC2071_H2O'   RA=05:47:04.758   DEC=00:21:42.70    equinox='J2000' rem='H2O maser; translated from B1950 positions for TW1-1 from 1998ApJ505..756Torelles' /
+!   source='NGC7538_H2O'   RA=23:13:45.3622  DEC=61:28:10.507   equinox='J2000' rem='H2O maser; positions from ' /
+!!   source='NGC7538_OH'    RA=23:13:45.34    DEC=61:28:10.1     equinox='J2000' rem='OH maser; positions from 2000ApJS...129Argon' /
+!   source='OH043_H2O', 'OH043.8-00.13_H2O', 'G043.796-00.127'  RA=19:11:53.997   DEC=09:35:50.59   equinox='J2000' rem='H2O maser; translated from B1950 positions from 2002ApJ580...928Sarma, RA-AO2-13' /
+!!   source='OH043_OH', 'OH043.8-00.13_OH',  'G043.796-00.127'  RA=19:11:54.01    DEC=09:35:50.0    equinox='J2000' rem='OH maser; positions from 2000ApJS...129Argon, RA-AO2-13' /
+!   source='OH17.7-2_H2O', 'V445SCT'  RA=18:30:30.620   DEC=-14:28:55.8    equinox='J2000' rem='H2O and OH maser (V445 Sct); positions from Simbad '/
+!!   source='OH17.7-2_OH',  'V445SCT'  RA=18:30:30.620   DEC=-14:28:55.8    equinox='J2000' rem='H2O and OH maser (V445 Sct); positions from Simbad '/
+!!   source='ON1_H2O', 'ON1_WMC2_H2O'  RA=20:10:09.1328  DEC=31:31:34.70    equinox='J2000' rem='H2O maser; positions WMC2?, RA-AO2-08, RA-AO2-13' /
+!!   source='ON1_OH'        RA=20:10:09.05    DEC=31:31:35.2     equinox='J2000' rem='OH maser; positions from 2005ApJS160...220..271Fish, RA-AO2-08, RA-AO2-13' /
+!   source='ON1_WMC1', 'ON1_WMC1_H2O'  RA=20:10:09.20454 DEC=31:31:36.1012  equinox='J2000' rem='H2O maser; positions from 2011PASJ63...23Nagayama, RA-AO2-08, RA-AO2-13'/
+!   source='ON2_H2O'       RA=20:21:44.013   DEC=37:26:37.97    equinox='J2000' rem='H2O maser; positions from 2009ASP Conference Series, V402..452ANDO'/
+!   source='R_CRT'            RA=11:00:33.85  DEC=-18:19:29.6  equinox='J2000' rem='H2O stellar maser; ' /
+!   source='RT_VIR_H2O'    RA=13:02:37.980   DEC=05:11:08.40    equinox='J2000' rem='H2O maser; positions from 2012A&A546..A16..75Richards, RA-AO2-13' /
+!   source='R_UMA'            RA=10:44:38.47  DEC=+68:46:32.7  equinox='J2000' rem='H2O stellar maser; ' /
+!   source='S269_H2O'      RA=06:14:37.07933 DEC=13:49:36.6945  equinox='J2000' rem='H2O maser; position from Honma et al 2008' /
+!!   source='S269_OH'       RA=06:14:37.07    DEC=13:49:36.3     equinox='J2000' rem='OH maser; positions from 2005ApJS160...220Fish' /
+!   source='SGR_B2M' ,'SGR_B2M_H2O'    RA=17:47:20.150   DEC=-28:23:04.03   equinox='J2000' rem='H2O maser; positions from 2009Apj705...1548Reid, RA-AO2-13' /
+!!   source='SN2013ej'               RA=01:36:48.2100 DEC=+15:45:30.640   equinox='J2000' rem='Type IIp SN in M74' /
+!!   source='SN2014J'                RA=09:55:42.121 DEC=+69:40:25.88   equinox='J2000' rem='Type Ia SN in M82, position from ATEL #5821' /
+!   source='S_PERSEI_H2O'  RA=02:22:51.7106  DEC=58:35:11.444   equinox='J2000' rem='H2O maser; positions from  2010ApJ721...267Asaki' /
+!!   source='S_PERSEI_OH'   RA=02:22:51.7106  DEC=58:35:11.444   equinox='J2000' rem='OH  maser; positions for H2O maser from  2010ApJ721...267Asaki' /
+!   source='SS433', 'V1343AQL'      RA=19:11:49.57     DEC=+04:58:57.9     equinox='J2000' rem='possible radio transient' /
+!   source='U_HER_H2O'     RA=16:25:47.47167 DEC=18:53:32.8556  equinox='J2000' rem='H2O maser; positions from Simbad'/
+!   source='V404CYG'                 RA=20:24:03.821432  DEC=33:52:01.901340   equinox='J2000'  rem='flaring LMXB, position at MJD 54322, Miller-Jones et al. (2009)' /
+!   source='V4641SGR'               RA=18:19:21.63 DEC=-25:24:25.8     equinox='J2000' rem='LMXB' /
+!   source='V645_CYG', 'V645_CYG_H2O'  RA=21:39:58.27171 DEC=50:14:21.0140  equinox='J2000' rem='H2O maser; positions from 2010PASJ62...101OH, RA-AO2-13' /
+!   source='V_ANT'            RA=10:21:09.11  DEC=-34:47:18.7  equinox='J2000' rem='H2O stellar maser; ' /
+!   source='VELA', 'J0835-4510', 'B0833-45' RA=08:35:20.680000 DEC=-45:10:35.70000 equinox='J2000' rem='PSR High dispersed DM=67.99, RA-AO3-08, RA-AO2-01' /
+!   source='VY_CMA_H2O'    RA=07:22:58.32906 DEC=-25:46:03.1410 equinox='J2000' rem='H2O maser; position from Choi2009' /
+!   source='W3IRS5_H2O'    RA=02:25:40.7120  DEC=62:05:52.522   equinox='J2000' rem='H2O maser; translated from B1950 positions 2000ApJ538..751Imai, RA-AO2-08' /
+!   source='W3OH_H2O'      RA=02:27:04.8362  DEC=61:52:24.607   equinox='J2000' rem='H2O maser; positions from 2006ApJ645..337Hachisuka, RA-AO2-13' /
+!!   source='W3OH_OH'       RA=02:27:03.8327  DEC=61:52:25.264   equinox='J2000' rem='OH maser; positions from 2005MNRAS357..800Wright, RA-AO2-13' /
+!   source='W48_OH'        RA=19:01:45.54    DEC=01:13:32.6     equinox='J2000' rem='OH maser; positions from 2000ApJS...129Argon, RA-AO2-13' /
+!   source='W49N_OH'       RA=19:10:13.18    DEC=09:06:12.2     equinox='J2000' rem='OH maser; positions from 2000ApJS...129Argon, RA-AO2-13' /
+!   source='W51_E2_H2O'    RA=19:23:43.823   DEC=14:30:36.692   equinox='J2000' rem='H2O maser; calculated positions from 2010ApJ720...1055Sato, RA-AO2-08, RA-AO2-13' /
+!!   source='W51_E2_OH'     RA=19:23:43.918   DEC=14:30:34.03    equinox='J2000' rem='OH maser; calculated from  positions from 2007ApJ670...1159Fish, RA-AO2-08, RA-AO2-13' /
+!   source='W51_E8_H2O'    RA=19:23:43.87363 DEC=14:30:29.4536  equinox='J2000' rem='H2O maser; positions from 2010ApJ720...1055Sato, RA-AO3-02, RA-AO2-08, RA-AO2-13' /
+!!   source='W51_E8_OH'     RA=19:23:43.9715  DEC=14:30:28.395   equinox='J2000' rem='OH maser; positions from 2007ApJ670...1159Fish, RA-AO2-08, RA-AO2-13' /
+!   source='W75N_H2O'      RA=20:38:36.49    DEC=42:37:34.3     equinox='J2000' rem='H2O maser; position from Alexei Alakoz'/
+!!   source='W75N_OH'       RA=20:38:36.4082  DEC=42:37:34.238   equinox='J2000' rem='OH maser; positions from 2010MNRAS404..1121Slysh, RA-AO2-08, RA-AO2-13' /
+!!   source='W75S_OH'       RA=20:39:00.96    DEC=42:22:48.1     equinox='J2000' rem='OH maser; positions from 2005ApJS160...220Fish, RA-AO2-13' /
+!   source='W_HYA'         RA=13:49:02.00  DEC=-28:22:03.5  equinox='J2000' rem='H2O stellar maser; ' /
+endcat /
