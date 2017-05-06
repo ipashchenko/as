@@ -4,6 +4,10 @@ import pickle
 from astropy import units as u
 from astropy.coordinates import SkyCoord
 import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import confusion_matrix, classification_report
 
 
 def parse_block_schedule_into_blocks(fname):
@@ -284,39 +288,68 @@ if __name__ == '__main__':
     fr = create_features_responces_dataset(block_sched_files,
                                            'RA_cat_v054.pkl')
 
-    # From astropy docs
-    ras = fr[fr['rank'] == 1]['ra']
-    decs = fr[fr['rank'] == 1]['dec']
-    ras_rad = [ra.wrap_at(180 * u.deg).radian for ra in ras]
-    decs_rad = [dec.radian for dec in decs]
+    # Move RA, DEC to rad
+    fr['ra'] = fr['ra'].apply(lambda ra: ra.wrap_at(180 * u.deg).radian)
+    fr['dec'] = fr['dec'].apply(lambda dec: dec.radian)
 
-    ras_ = fr[fr['rank'] == 0]['ra']
-    decs_ = fr[fr['rank'] == 0]['dec']
-    ras_rad_ = [ra.wrap_at(180 * u.deg).radian for ra in ras_]
-    decs_rad_ = [dec.radian for dec in decs_]
+    # Move DEC from rads [-pi/2, pi/2] to [-1, 1] by sin
+    fr['sindec'] = fr['dec'].apply(lambda dec: np.sin(dec))
 
-    import matplotlib.pyplot as plt
-    plt.figure(figsize=(8, 4.2))
-    plt.subplot(111, projection="aitoff")
-    plt.grid(True)
-    plt.plot(ras_rad, decs_rad, 'o', markersize=2, alpha=0.2, color='r',
-             label='bad')
-    plt.plot(ras_rad_, decs_rad_, 'o', markersize=2, alpha=0.2, color='g',
-             label='good')
-    plt.subplots_adjust(top=0.95, bottom=0.0)
-    plt.legend()
-    plt.show()
+    # From RA create 2 features - (sin(ra), cos(ra))
+    fr['sinra'] = fr['ra'].apply(lambda ra: np.sin(ra))
+    fr['cosra'] = fr['ra'].apply(lambda ra: np.cos(ra))
 
-    frac_year = fr[fr['rank'] == 1]['frac_year']
-    frac_year_ = fr[fr['rank'] == 0]['frac_year']
-    plt.figure()
-    plt.subplot(111)
-    plt.hist(frac_year, bins=20, color='r', alpha=0.3, label='bad',
-             range=[0, 1])
-    plt.hist(frac_year_, bins=20, color='g', alpha=0.3, label='good',
-             range=[0, 1])
-    plt.xlabel(r'Fraction of the year')
-    plt.ylabel('N')
-    plt.legend()
-    plt.show()
+    # Create arrays of features and responces
+    features_names = ['frac_year', 'sindec', 'sinra', 'cosra']
+    X = np.array(fr[list(features_names)].values, dtype=float)
+    y = np.array(fr['rank'].values, dtype=int)
+
+
+    clf = KNeighborsClassifier(n_neighbors=15, weights='distance', n_jobs=2)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25,
+                                                        stratify=y)
+    clf.fit(X_train, y_train)
+    y_pred = clf.predict(X_test)
+    cm = confusion_matrix(y_test, y_pred)
+    print(classification_report(y_test, y_pred))
+    print cm
+
+
+    # Plotting two classes #####################################################
+    # # From astropy docs
+    # ras = fr[fr['rank'] == 1]['ra']
+    # decs = fr[fr['rank'] == 1]['dec']
+    # ras_rad = [ra.wrap_at(180 * u.deg).radian for ra in ras]
+    # decs_rad = [dec.radian for dec in decs]
+
+    # ras_ = fr[fr['rank'] == 0]['ra']
+    # decs_ = fr[fr['rank'] == 0]['dec']
+    # ras_rad_ = [ra.wrap_at(180 * u.deg).radian for ra in ras_]
+    # decs_rad_ = [dec.radian for dec in decs_]
+
+    # import matplotlib.pyplot as plt
+    # plt.figure(figsize=(8, 4.2))
+    # plt.subplot(111, projection="aitoff")
+    # plt.grid(True)
+    # plt.plot(ras_rad, decs_rad, 'o', markersize=2, alpha=0.2, color='r',
+    #          label='bad')
+    # plt.plot(ras_rad_, decs_rad_, 'o', markersize=2, alpha=0.2, color='g',
+    #          label='good')
+    # plt.subplots_adjust(top=0.95, bottom=0.0)
+    # plt.legend()
+    # plt.show()
+
+    # frac_year = fr[fr['rank'] == 1]['frac_year']
+    # frac_year_ = fr[fr['rank'] == 0]['frac_year']
+    # plt.figure()
+    # plt.subplot(111)
+    # plt.hist(frac_year, bins=20, color='r', alpha=0.3, label='bad',
+    #          range=[0, 1])
+    # plt.hist(frac_year_, bins=20, color='g', alpha=0.3, label='good',
+    #          range=[0, 1])
+    # plt.xlabel(r'Fraction of the year')
+    # plt.ylabel('N')
+    # plt.legend()
+    # plt.show()
+    ############################################################################
 
