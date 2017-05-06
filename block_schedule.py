@@ -305,6 +305,27 @@ def parse_orbit(orbit_fname):
     return df
 
 
+def add_distance_by_uttime(target_df, orbit_df):
+    """
+    Function that updates data frame with new orbit-based features.
+    
+    :param target_df: 
+        Data frame with examples containing UT datetime.
+    :param orbit_df: 
+        Orbit-related data frame created by ``parse_orbit`` function.
+    :return: 
+        Updated examples data frame.
+    """
+    distances = list()
+    for index, row in target_df.iterrows():
+        ut_dt = row['ut_dt']
+        dist_km = orbit_df.ix[(orbit_df.ut_time-ut_dt).abs().argsort()[:1]].dist_km.values[0]
+        distances.append(dist_km)
+    target_df['dist_km'] = distances
+
+    return target_df
+
+
 def objective(space):
     pprint.pprint(space)
     clf = LogisticRegression(C=space['C'],
@@ -348,6 +369,7 @@ if __name__ == '__main__':
     orbit_df = parse_orbit('/home/ilya/code/as/RA141109-170805.org')
     fr = create_features_responces_dataset(block_sched_files,
                                            'RA_cat_v054.pkl')
+    fr = add_distance_by_uttime(fr, orbit_df)
 
     # Move RA, DEC to rad
     fr['ra'] = fr['ra'].apply(lambda ra: ra.wrap_at(180 * u.deg).radian)
