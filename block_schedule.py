@@ -1,22 +1,29 @@
 import re
 import datetime
 import pickle
+import pprint
 from astropy import units as u
 from astropy.coordinates import SkyCoord
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_predict
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import confusion_matrix, classification_report
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import Pipeline
+from sklearn.cross_validation import StratifiedKFold
+from hyperopt import hp, fmin, tpe, STATUS_OK, Trials, space_eval
+
 
 
 def parse_block_schedule_into_blocks(fname):
     """
     Parse block_schedule into blocks of lines.
-    
-    :param fname: 
+
+    :param fname:
         Path to block_schedule file.
-    :return: 
+    :return:
         List of blocks with lines containing information about observation.
     """
     with open(fname, 'r') as fo:
@@ -189,7 +196,7 @@ def get_ut_source_from_block(block):
 
 def parse_racat(fname):
     """
-    :return: 
+    :return:
         Dictionary with keys - source names and values - instances of
         ``astropy.coordinates.SkyCoord``.
     """
@@ -217,8 +224,8 @@ def parse_racat(fname):
 def dump_source_coordinates(ra_cat_fname, outfname):
     """
     Pickle source coordinates to file.
-    
-    :param ra_cat_fname: 
+
+    :param ra_cat_fname:
         Path to RA catalouge.
     :param outfname:
         Path to dump file.
@@ -231,7 +238,7 @@ def dump_source_coordinates(ra_cat_fname, outfname):
 def load_source_coordinates(fname):
     """
     Load source coordinates dictionary from pickle-file.
-    :return: 
+    :return:
         Dictionary with keys - source names and values - instances of
         ``astropy.coordinates.SkyCoord``.
     """
@@ -277,13 +284,45 @@ def create_features_responces_dataset(block_sched_files, ra_cat_pkl):
     return features_responces
 
 
+def objective(space):
+    pprint.pprint(space)
+    clf = LogisticRegression(C=space['C'],
+                             class_weight={0: 1, 1: space['cw']},
+                             random_state=1, max_iter=300, n_jobs=1,
+                             tol=10.**(-5), penalty='l2')
+    estimators = list()
+    estimators.append(('poly', PolynomialFeatures()))
+    estimators.append(('scaler', StandardScaler()))
+    estimators.append(('clf', clf))
+    pipeline = Pipeline(estimators)
+
+    y_preds = cross_val_predict(pipeline, X, y, cv=kfold, n_jobs=4)
+    CMs = list()
+    for train_idx, test_idx in kfold:
+        CMs.append(confusion_matrix(y[test_idx], y_preds[test_idx]))
+    CM = np.sum(CMs, axis=0)
+
+    FN = CM[1][0]
+    TP = CM[1][1]
+    FP = CM[0][1]
+    print("TP = {}".format(TP))
+    print("FP = {}".format(FP))
+    print("FN = {}".format(FN))
+
+    f1 = 2. * TP / (2. * TP + FP + FN)
+
+    print("F1: {}".format(f1))
+
+    return{'loss': 1-f1, 'status': STATUS_OK}
+
+
 if __name__ == '__main__':
     import os
     import glob
     block_sched_dir = '/home/ilya/Dropbox/scheduling/block_schedules'
     block_sched_files = glob.glob(os.path.join(block_sched_dir,
                                                '*_block_schedule.*'))
-    dump_source_coordinates('/home/ilya/code/as/Radioastron_Input_Catalog_v054.txt',
+    dump_source_coordinates('/home/ilya/github/as/Radioastron_Input_Catalog_v054.txt',
                             'RA_cat_v054.pkl')
     fr = create_features_responces_dataset(block_sched_files,
                                            'RA_cat_v054.pkl')
@@ -304,15 +343,25 @@ if __name__ == '__main__':
     X = np.array(fr[list(features_names)].values, dtype=float)
     y = np.array(fr['rank'].values, dtype=int)
 
+    # Just naively try kNN
+    # clf = KNeighborsClassifier(n_neighbors=15, weights='distance', n_jobs=2)
+    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25,
+    #                                                     stratify=y)
+    # clf.fit(X_train, y_train)
+    # y_pred = clf.predict(X_test)
+    # print(classification_report(y_test, y_pred))
 
-    clf = KNeighborsClassifier(n_neighbors=15, weights='distance', n_jobs=2)
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25,
-                                                        stratify=y)
-    clf.fit(X_train, y_train)
-    y_pred = clf.predict(X_test)
-    cm = confusion_matrix(y_test, y_pred)
-    print(classification_report(y_test, y_pred))
-    print cm
+    # Tuning HP of logistic regression with polynomial features
+    kfold = StratifiedKFold(y, n_folds=4, shuffle=True, random_state=1)
+    space = {'C': hp.loguniform('C', -3.3, 6.3),
+             'cw': hp.loguniform('cw', -0.7, 5)}
+    trials = Trials()
+    best = fmin(fn=objective,
+                space=space,
+                algo=tpe.suggest,
+                max_evals=500,
+                trials=trials)
+    pprint.pprint(space_eval(space, best))
 
 
     # Plotting two classes #####################################################
