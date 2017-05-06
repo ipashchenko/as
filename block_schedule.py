@@ -253,7 +253,7 @@ def datetime_to_fractional_year(dt):
 
 def create_features_responces_dataset(block_sched_files, ra_cat_pkl):
     features_responces = list()
-    columns = ('frac_year', 'ra', 'dec', 'rank')
+    columns = ('ut_dt', 'frac_year', 'ra', 'dec', 'rank')
     source_coordinates = load_source_coordinates(ra_cat_pkl)
     for block_sched_file in block_sched_files:
         print("Parsing block-sched file {}".format(block_sched_file))
@@ -267,7 +267,6 @@ def create_features_responces_dataset(block_sched_files, ra_cat_pkl):
             # FIXME: ??? in coordinates of block schedule
             except ValueError:
                 continue
-            print source, source_alt
             frac_year = datetime_to_fractional_year(ut_dt)
             try:
                 sky_coord = source_coordinates[source]
@@ -277,11 +276,33 @@ def create_features_responces_dataset(block_sched_files, ra_cat_pkl):
                 # Some weird maser coordinates
                 except KeyError:
                     continue
-            features_responces.append((frac_year, sky_coord.ra, sky_coord.dec,
+            features_responces.append((ut_dt, frac_year, sky_coord.ra, sky_coord.dec,
                                        rank))
     features_responces = pd.DataFrame.from_records(features_responces,
                                                    columns=columns)
     return features_responces
+
+
+def parse_orbit(orbit_fname):
+    names = ['ut_time', 'x', 'y', 'z', 'xx', 'yy', 'zz']
+    df = pd.read_table(orbit_fname, sep='\s+', header=None,
+                       names=names, dtype={key: str for key in names},
+                       index_col=False)
+    for key in names[1:]:
+        df[key] = df[key].apply(lambda x: float(x))
+    df['dist_km'] = np.sqrt(df['x']**2 + df['y']**2 + df['z']**2)
+
+    # Filter out seconds equal to 60
+    df['sec'] = df['ut_time'].apply(lambda x: x.split(':')[2].split('.')[0])
+    bad_ix_array = np.where(df['sec']=='60')[0]
+    df.drop(df.index[bad_ix_array], inplace=True)
+
+    df['ut_time'] =\
+        df['ut_time'].apply(lambda x:
+                            datetime.datetime.strptime(x.split('.')[0],
+                                                       '%Y-%m-%dT%H:%M:%S'))
+    del df['xx'], df['yy'], df['zz'], df['sec']
+    return df
 
 
 def objective(space):
@@ -322,8 +343,9 @@ if __name__ == '__main__':
     block_sched_dir = '/home/ilya/Dropbox/scheduling/block_schedules'
     block_sched_files = glob.glob(os.path.join(block_sched_dir,
                                                '*_block_schedule.*'))
-    dump_source_coordinates('/home/ilya/github/as/Radioastron_Input_Catalog_v054.txt',
+    dump_source_coordinates('/home/ilya/code/as/Radioastron_Input_Catalog_v054.txt',
                             'RA_cat_v054.pkl')
+    orbit_df = parse_orbit('/home/ilya/code/as/RA141109-170805.org')
     fr = create_features_responces_dataset(block_sched_files,
                                            'RA_cat_v054.pkl')
 
@@ -339,9 +361,9 @@ if __name__ == '__main__':
     fr['cosra'] = fr['ra'].apply(lambda ra: np.cos(ra))
 
     # Create arrays of features and responces
-    features_names = ['frac_year', 'sindec', 'sinra', 'cosra']
-    X = np.array(fr[list(features_names)].values, dtype=float)
-    y = np.array(fr['rank'].values, dtype=int)
+    # features_names = ['frac_year', 'sindec', 'sinra', 'cosra']
+    # X = np.array(fr[list(features_names)].values, dtype=float)
+    # y = np.array(fr['rank'].values, dtype=int)
 
     # Just naively try kNN
     # clf = KNeighborsClassifier(n_neighbors=15, weights='distance', n_jobs=2)
@@ -352,16 +374,16 @@ if __name__ == '__main__':
     # print(classification_report(y_test, y_pred))
 
     # Tuning HP of logistic regression with polynomial features
-    kfold = StratifiedKFold(y, n_folds=4, shuffle=True, random_state=1)
-    space = {'C': hp.loguniform('C', -3.3, 6.3),
-             'cw': hp.loguniform('cw', -0.7, 5)}
-    trials = Trials()
-    best = fmin(fn=objective,
-                space=space,
-                algo=tpe.suggest,
-                max_evals=500,
-                trials=trials)
-    pprint.pprint(space_eval(space, best))
+    # kfold = StratifiedKFold(y, n_folds=4, shuffle=True, random_state=1)
+    # space = {'C': hp.loguniform('C', -3.3, 6.3),
+    #          'cw': hp.loguniform('cw', -0.7, 5)}
+    # trials = Trials()
+    # best = fmin(fn=objective,
+    #             space=space,
+    #             algo=tpe.suggest,
+    #             max_evals=500,
+    #             trials=trials)
+    # pprint.pprint(space_eval(space, best))
 
 
     # Plotting two classes #####################################################
