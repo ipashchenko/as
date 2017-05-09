@@ -3,7 +3,7 @@ import datetime
 import pickle
 import pprint
 from astropy import units as u
-from astropy.coordinates import SkyCoord
+from astropy.coordinates import SkyCoord, Latitude, Longitude
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,7 +19,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.cross_validation import StratifiedKFold, cross_val_score
 from hyperopt import hp, fmin, tpe, STATUS_OK, Trials, space_eval
 from sklearn.feature_extraction import DictVectorizer
-
 
 
 def parse_block_schedule_into_blocks(fname):
@@ -258,7 +257,7 @@ def datetime_to_fractional_year(dt):
 
 def create_features_responces_dataset(block_sched_files, ra_cat_pkl):
     features_responces = list()
-    columns = ('ut_dt', 'frac_year', 'ra', 'dec', 'rank')
+    columns = ('ut_dt', 'frac_year', 'source_coordinates', 'rank')
     source_coordinates = load_source_coordinates(ra_cat_pkl)
     for block_sched_file in block_sched_files:
         print("Parsing block-sched file {}".format(block_sched_file))
@@ -281,8 +280,7 @@ def create_features_responces_dataset(block_sched_files, ra_cat_pkl):
                 # Some weird maser coordinates
                 except KeyError:
                     continue
-            features_responces.append((ut_dt, frac_year, sky_coord.ra, sky_coord.dec,
-                                       rank))
+            features_responces.append((ut_dt, frac_year, sky_coord, rank))
     features_responces = pd.DataFrame.from_records(features_responces,
                                                    columns=columns)
     return features_responces
@@ -307,6 +305,29 @@ def parse_orbit(orbit_fname):
                             datetime.datetime.strptime(x.split('.')[0],
                                                        '%Y-%m-%dT%H:%M:%S'))
     del df['xx'], df['yy'], df['zz'], df['sec']
+    return df
+
+
+def parse_orientations(orient_fname):
+    names = ['id', 'obscode', 'ut_time', 'xalpha', 'xdelta', 'yalpha', 'ydelta',
+             'zalpha', 'zdelta']
+    df = pd.read_table(orient_fname, sep='|', header=2,
+                       names=names, dtype={key: str for key in names},
+                       index_col=False)
+    df['ut_time'] = \
+        df['ut_time'].apply(lambda x:
+                            datetime.datetime.strptime(x.strip().split('+')[0],
+                                                       '%Y-%m-%d %H:%M:%S'))
+    for name in names[3:]:
+        df[name] = df[name].apply(lambda x: float(x))
+
+    # df['x'] = SkyCoord(df['xalpha'] + ' ' + df['xdelta'],
+    #                    unit=(u.hourangle, u.deg))
+    for name in ['xalpha', 'yalpha', 'zalpha']:
+        df[name] = df[name].apply(lambda x: Longitude(x, u.hourangle))
+    for name in ['xdelta', 'ydelta', 'zdelta']:
+        df[name] = df[name].apply(lambda x: Latitude(x, u.deg))
+
     return df
 
 
@@ -344,6 +365,94 @@ def add_distance_by_uttime(target_df, orbit_df):
     target_df['status'] = statuses
 
     return target_df
+
+
+def add_orientation_by_uttime(target_df, orient_df):
+    """
+    Function that updates data frame with new orientation-based features.
+    
+    :param target_df: 
+        Data frame with examples containing UT datetime.
+    :param orient_df: 
+        Orinetation-related data frame created by ``parse_orientation`` function.
+    :return: 
+        Updated examples data frame.
+    """
+    x_orientations = list()
+    y_orientations = list()
+    z_orientations = list()
+    for index, row in target_df.iterrows():
+        ix = (orient_df.ut_time-row['ut_dt']).abs().argsort()[:1]
+
+        # Check that time moment is really belongs to experiment
+        dt = abs(orient_df.ix[ix].ut_time - row['ut_dt'])
+        if (dt > datetime.timedelta(minutes=5)).bool():
+            x_orientations.append(None)
+            y_orientations.append(None)
+            z_orientations.append(None)
+            continue
+
+        xalpha = orient_df.ix[ix].xalpha.values[0]
+        xdelta = orient_df.ix[ix].xdelta.values[0]
+        x_orientations.append(SkyCoord(xalpha, xdelta,
+                                       unit=(u.hourangle, u.deg)))
+        yalpha = orient_df.ix[ix].yalpha.values[0]
+        ydelta = orient_df.ix[ix].ydelta.values[0]
+        y_orientations.append(SkyCoord(yalpha, ydelta,
+                                       unit=(u.hourangle, u.deg)))
+        zalpha = orient_df.ix[ix].zalpha.values[0]
+        zdelta = orient_df.ix[ix].zdelta.values[0]
+        z_orientations.append(SkyCoord(zalpha, zdelta,
+                                       unit=(u.hourangle, u.deg)))
+
+    target_df['x_orientation'] = x_orientations
+    target_df['y_orientation'] = y_orientations
+    target_df['z_orientation'] = z_orientations
+
+    return target_df
+
+
+def transform_skycoordinates_to_radec(df, names, move_to_rad=True):
+    """
+    Transform ``SkyCoordinate`` column to ``sindec``, ``sinra``, ``cosra``.
+    
+    :param df: 
+        Data frame with ``SkyCoordinate`` column.
+    :param names:
+        Iterable with names of columns with ``SkyCoordinate``s.
+    :param move_to_rad: (optional)
+        Should be values moved to radians (from degrees)? (default: ``True``)
+    :return: 
+        Data frame with transformed `SkyCoordinate`` column that has 3 more
+        columns now.
+    """
+
+    for name in names:
+        sindec = list()
+        sinra = list()
+        cosra = list()
+        for index, row in df.iterrows():
+            try:
+                ra = row[name].ra
+                dec = row[name].dec
+
+                if move_to_rad:
+                    ra = ra.wrap_at(180 * u.deg).radian
+                    dec = dec.radian
+
+                sindec.append(np.sin(dec))
+                sinra.append(np.sin(ra))
+                cosra.append(np.cos(ra))
+            except AttributeError:
+                sindec.append(None)
+                sinra.append(None)
+                cosra.append(None)
+
+        df['sindec_{}'.format(name)] = sindec
+        df['sinra_{}'.format(name)] = sinra
+        df['cosra_{}'.format(name)] = cosra
+
+    return df
 
 
 def plot_importance(clf, names):
@@ -405,53 +514,53 @@ def one_hot(df, cols):
     return df
 
 
-def objective(space):
-    pprint.pprint(space)
-    # clf = LogisticRegression(C=space['C'],
-    #                          class_weight={0: 1, 1: space['cw']},
-    #                          random_state=1, max_iter=300, n_jobs=1,
-    #                          tol=10.**(-5), penalty='l2')
-    clf = RandomForestClassifier(n_estimators=space['n_estimators'],
-                                 max_depth=space['max_depth'],
-                                 max_features=space['max_features'],
-                                 min_samples_split=space['mss'],
-                                 min_samples_leaf=space['msl'],
-                                 class_weight={0: 1, 1: space['cw']},
-                                 verbose=1, random_state=1, n_jobs=4)
-    # clf = SVC(C=space['C'], class_weight={0: 1, 1: space['cw']},
-    #           probability=False, gamma=space['gamma'], random_state=1)
-    # clf = KNeighborsClassifier(n_neighbors=space['k'], weights='distance',
-    #                            n_jobs=2)
-    estimators = list()
-    # estimators.append(('poly', PolynomialFeatures()))
-    # estimators.append(('scaler', StandardScaler()))
-    estimators.append(('clf', clf))
-    pipeline = Pipeline(estimators)
-
-    auc = np.mean(cross_val_score(pipeline, X, y, cv=kfold, scoring='roc_auc',
-                                  verbose=1, n_jobs=1))
-    # y_preds = cross_val_predict(pipeline, X, y, cv=kfold, n_jobs=1)
-    # CMs = list()
-    # for train_idx, test_idx in kfold:
-    #     CMs.append(confusion_matrix(y[test_idx], y_preds[test_idx]))
-    # CM = np.sum(CMs, axis=0)
-
-    # FN = CM[1][0]
-    # TP = CM[1][1]
-    # FP = CM[0][1]
-    # print("TP = {}".format(TP))
-    # print("FP = {}".format(FP))
-    # print("FN = {}".format(FN))
-
-    # f1 = 2. * TP / (2. * TP + FP + FN)
-    # beta = 0.25
-    # fbeta = (1+beta**2)*TP/((1+beta**2)*TP+FN*beta**2+FP)
-
-    # print("F1: {}".format(f1))
-    # print("F0.25: {}".format(fbeta))
-    print("AUC: {}".format(auc))
-
-    return{'loss': 1-auc, 'status': STATUS_OK}
+# def objective(space):
+#     pprint.pprint(space)
+#     # clf = LogisticRegression(C=space['C'],
+#     #                          class_weight={0: 1, 1: space['cw']},
+#     #                          random_state=1, max_iter=300, n_jobs=1,
+#     #                          tol=10.**(-5), penalty='l2')
+#     clf = RandomForestClassifier(n_estimators=space['n_estimators'],
+#                                  max_depth=space['max_depth'],
+#                                  max_features=space['max_features'],
+#                                  min_samples_split=space['mss'],
+#                                  min_samples_leaf=space['msl'],
+#                                  class_weight={0: 1, 1: space['cw']},
+#                                  verbose=1, random_state=1, n_jobs=4)
+#     # clf = SVC(C=space['C'], class_weight={0: 1, 1: space['cw']},
+#     #           probability=False, gamma=space['gamma'], random_state=1)
+#     # clf = KNeighborsClassifier(n_neighbors=space['k'], weights='distance',
+#     #                            n_jobs=2)
+#     # estimators = list()
+#     # estimators.append(('poly', PolynomialFeatures()))
+#     # estimators.append(('scaler', StandardScaler()))
+#     # estimators.append(('clf', clf))
+#     # pipeline = Pipeline(estimators)
+#
+#     # auc = np.mean(cross_val_score(pipeline, X, y, cv=kfold, scoring='roc_auc',
+#     #                               verbose=1, n_jobs=1))
+#     # y_preds = cross_val_predict(pipeline, X, y, cv=kfold, n_jobs=1)
+#     # CMs = list()
+#     # for train_idx, test_idx in kfold:
+#     #     CMs.append(confusion_matrix(y[test_idx], y_preds[test_idx]))
+#     # CM = np.sum(CMs, axis=0)
+#
+#     # FN = CM[1][0]
+#     # TP = CM[1][1]
+#     # FP = CM[0][1]
+#     # print("TP = {}".format(TP))
+#     # print("FP = {}".format(FP))
+#     # print("FN = {}".format(FN))
+#
+#     # f1 = 2. * TP / (2. * TP + FP + FN)
+#     # beta = 0.25
+#     # fbeta = (1+beta**2)*TP/((1+beta**2)*TP+FN*beta**2+FP)
+#
+#     # print("F1: {}".format(f1))
+#     # print("F0.25: {}".format(fbeta))
+#     print("AUC: {}".format(auc))
+#
+#     return{'loss': 1-auc, 'status': STATUS_OK}
 
 
 if __name__ == '__main__':
@@ -460,35 +569,42 @@ if __name__ == '__main__':
     block_sched_dir = '/home/ilya/Dropbox/scheduling/block_schedules'
     block_sched_files = glob.glob(os.path.join(block_sched_dir,
                                                '*_block_schedule.*'))
-    dump_source_coordinates('/home/ilya/code/as/Radioastron_Input_Catalog_v054.txt',
+    dump_source_coordinates('/home/ilya/github/as/Radioastron_Input_Catalog_v054.txt',
                             'RA_cat_v054.pkl')
-    orbit_df = parse_orbit('/home/ilya/code/as/RA141109-170805.org')
+    orbit_df = parse_orbit('/home/ilya/github/as/RA141109-170805.org')
+    orient_df = parse_orientations('/home/ilya/github/as/orientation_2015.txt')
     fr = create_features_responces_dataset(block_sched_files,
                                            'RA_cat_v054.pkl')
     fr = add_distance_by_uttime(fr, orbit_df)
+    fr = add_orientation_by_uttime(fr, orient_df)
+    names = ['source_coordinates', 'x_orientation', 'y_orientation',
+             'z_orientation']
+    fr = transform_skycoordinates_to_radec(fr, names)
+
+    # Delete unused columns
+    for name in names:
+        del fr[name]
 
     # One-hot encode preceding/receding SRT
     fr = one_hot(fr, ['status'])
     # Delete encoded column
     del fr['status']
 
-    # Move RA, DEC to rad
-    fr['ra'] = fr['ra'].apply(lambda ra: ra.wrap_at(180 * u.deg).radian)
-    fr['dec'] = fr['dec'].apply(lambda dec: dec.radian)
-
-    # Move DEC from rads [-pi/2, pi/2] to [-1, 1] by sin
-    fr['sindec'] = fr['dec'].apply(lambda dec: np.sin(dec))
-
-    # From RA create 2 features - (sin(ra), cos(ra))
-    fr['sinra'] = fr['ra'].apply(lambda ra: np.sin(ra))
-    fr['cosra'] = fr['ra'].apply(lambda ra: np.cos(ra))
-
     # Create arrays of features and responces
-    features_names = ['frac_year', 'sindec', 'sinra', 'cosra', 'dist_km',
+    features_names = ['frac_year', 'dist_km',
+                      'sindec_source_coordinates', 'sinra_source_coordinates',
+                      'cosra_source_coordinates',
+                      'sindec_x_orientation', 'sinra_x_orientation',
+                      'cosra_x_orientation',
+                      'sindec_y_orientation', 'sinra_y_orientation',
+                      'cosra_y_orientation',
+                      'sindec_z_orientation', 'sinra_z_orientation',
+                      'cosra_z_orientation',
                       'status_in', 'status_out']
     X = np.array(fr[list(features_names)].values, dtype=float)
     y = np.array(fr['rank'].values, dtype=int)
 
+    ##################### Trying classification#################################
     # Just naively try kNN
     # clf = KNeighborsClassifier(n_neighbors=15, weights='distance', n_jobs=2)
     # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25,
@@ -502,13 +618,13 @@ if __name__ == '__main__':
     #          'cw': hp.loguniform('cw', -0.7, 5)}
 
     # Tuning HP of RF classifier
-    space = {'n_estimators': hp.choice('n_estimators', np.arange(600, 1500, 100,
-                                                                 dtype=int)),
-             'max_depth': hp.choice('max_depth', np.arange(8, 15, dtype=int)),
-             'max_features': hp.choice('max_features', np.arange(2, 5, dtype=int)),
-             'mss': hp.choice('mss', np.arange(15, 30, 2, dtype=int)),
-             'cw': hp.uniform('cw', 2, 8),
-             'msl': hp.choice('msl', np.arange(2, 10, dtype=int))}
+    # space = {'n_estimators': hp.choice('n_estimators', np.arange(600, 1500, 100,
+    #                                                              dtype=int)),
+    #          'max_depth': hp.choice('max_depth', np.arange(8, 15, dtype=int)),
+    #          'max_features': hp.choice('max_features', np.arange(2, 5, dtype=int)),
+    #          'mss': hp.choice('mss', np.arange(15, 30, 2, dtype=int)),
+    #          'cw': hp.uniform('cw', 2, 8),
+    #          'msl': hp.choice('msl', np.arange(2, 10, dtype=int))}
 
     # Tuning HP of RBF-SVM
     # space = {'C': hp.loguniform('C', -3.0, 5.6),
@@ -518,15 +634,15 @@ if __name__ == '__main__':
     # Tuning HP of kNN
     # space = {'k': hp.choice('k', np.arange(1, 40, dtype=int))}
 
-    kfold = StratifiedKFold(y, n_folds=4, shuffle=True, random_state=1)
+    # kfold = StratifiedKFold(y, n_folds=4, shuffle=True, random_state=1)
 
-    trials = Trials()
-    best = fmin(fn=objective,
-                space=space,
-                algo=tpe.suggest,
-                max_evals=200,
-                trials=trials)
-    pprint.pprint(space_eval(space, best))
+    # trials = Trials()
+    # best = fmin(fn=objective,
+    #             space=space,
+    #             algo=tpe.suggest,
+    #             max_evals=200,
+    #             trials=trials)
+    # pprint.pprint(space_eval(space, best))
 
 
     # Plotting two classes #####################################################
