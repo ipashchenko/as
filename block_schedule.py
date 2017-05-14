@@ -664,10 +664,10 @@ if __name__ == '__main__':
     block_sched_dir = '/home/ilya/Dropbox/scheduling/block_schedules'
     block_sched_files = glob.glob(os.path.join(block_sched_dir,
                                                '*_block_schedule.*'))
-    dump_source_coordinates('/home/ilya/code/as/Radioastron_Input_Catalog_v054.txt',
+    dump_source_coordinates('/home/ilya/Dropbox/AS/Radioastron_Input_Catalog_v054.txt',
                             'RA_cat_v054.pkl')
-    orbit_df = parse_orbit('/home/ilya/code/as/RA141109-170805.org')
-    orient_df = parse_orientations('/home/ilya/code/as/orientation_2015.txt')
+    orbit_df = parse_orbit('/home/ilya/Dropbox/AS/RA141109-170805.org')
+    orient_df = parse_orientations('/home/ilya/Dropbox/AS/orientation_2015_2017.txt')
     elements_df = parse_orbit_elements('/home/ilya/Dropbox/AS/RA150223-171118_orbit_elements.txt')
     fr = create_features_responces_dataset(block_sched_files,
                                            'RA_cat_v054.pkl')
@@ -698,12 +698,15 @@ if __name__ == '__main__':
                       'sindec_source_coordinates', 'sinra_source_coordinates',
                       'cosra_source_coordinates',
                       # SRT orientation
-                      'sindec_x_orientation', 'sinra_x_orientation',
-                      'cosra_x_orientation',
-                      'sindec_y_orientation', 'sinra_y_orientation',
-                      'cosra_y_orientation',
-                      'sindec_z_orientation', 'sinra_z_orientation',
-                      'cosra_z_orientation',
+                      # 'sindec_x_orientation',
+                      # 'sinra_x_orientation',
+                      # 'cosra_x_orientation',
+                      # 'sindec_y_orientation',
+                      # 'sinra_y_orientation',
+                      # 'cosra_y_orientation',
+                      # 'sindec_z_orientation',
+                      # 'sinra_z_orientation',
+                      # 'cosra_z_orientation',
                       'status_in', 'status_out',
                       # Orbital elements
                       'Hpi', 'Half', 'a', 'e', 'i', 'om', 'w',
@@ -711,7 +714,7 @@ if __name__ == '__main__':
 
     # Create dataframe with only non-NAN rows of orientations (bad: 57,
     # good: 323) (compare (bad: 297, good: 1008) of full sample.
-    fr = fr[pd.notnull(fr['cosra_z_orientation'])]
+    # fr = fr[pd.notnull(fr['cosra_z_orientation'])]
 
     X = np.array(fr[list(features_names)].values, dtype=float)
     y = np.array(fr['rank'].values, dtype=int)
@@ -730,13 +733,13 @@ if __name__ == '__main__':
     #          'cw': hp.loguniform('cw', -0.7, 5)}
 
     # Tuning HP of RF classifier
-    space = {'n_estimators': hp.choice('n_estimators', np.arange(750, 900, 25,
+    space = {'n_estimators': hp.choice('n_estimators', np.arange(100, 1500, 100,
                                                                  dtype=int)),
              'max_depth': hp.choice('max_depth', np.arange(5, 30, dtype=int)),
-             'max_features': hp.choice('max_features', np.arange(5, 29, dtype=int)),
-             'mss': hp.choice('mss', np.arange(20, 23, 1, dtype=int)),
-             'cw': hp.uniform('cw', 23, 30),
-             'msl': hp.choice('msl', np.arange(7, 10, dtype=int))}
+             'max_features': hp.choice('max_features', np.arange(5, 20, dtype=int)),
+             'mss': hp.choice('mss', np.arange(5, 45, 1, dtype=int)),
+             'cw': hp.uniform('cw', 1, 30),
+             'msl': hp.choice('msl', np.arange(1, 20, dtype=int))}
 
     # Tuning HP of RBF-SVM
     # space = {'C': hp.loguniform('C', -3.0, 5.6),
@@ -752,7 +755,7 @@ if __name__ == '__main__':
     best = fmin(fn=objective,
                 space=space,
                 algo=tpe.suggest,
-                max_evals=100,
+                max_evals=50,
                 trials=trials)
     pprint.pprint(space_eval(space, best))
 
